@@ -13,7 +13,7 @@ function declaration(token){
  if(k==='py')return `padding-top:${v};padding-bottom:${v}`;
  if(k==='size')return `width:${v};height:${v}`;
  if(k==='text')return /^(\d|calc)/.test(v)?'font-size:'+v:'color:'+v;
- if(k==='font')return 'font-family:var(--font-jakarta),Arial,sans-serif';
+ if(k==='font')return 'font-family:var(--font-body)';
  if(k==='bg')return v.startsWith('url')?'background-image:'+v:'background-color:'+v;
  if(k==='bg-size')return 'background-size:'+v;
  if(k==='border')return /^\d/.test(v)?'border-width:'+v:'border-color:'+v;
@@ -23,7 +23,7 @@ function declaration(token){
  if(['from','via','to'].includes(k))return `--gradient-${k}:${v}`;
  unsupported.add(token);return '';
 }
-function classFor(value){if(!classes.has(value)){classes.set(value,{name:'figma-'+classes.size,css:value.split(' ').map(declaration).filter(Boolean).join(';')});}return classes.get(value).name;}
+function classFor(value){if(!classes.has(value)){const size=Number(value.match(/text-\[(\d+(?:\.\d+)?)px\]/)?.[1]||0);const heading=value.includes('uppercase')||/font-(semibold|bold|extrabold)/.test(value)||(size>=18&&value.includes('font-medium'));classes.set(value,{name:'figma-'+classes.size,css:value.split(' ').map(declaration).filter(Boolean).join(';')+(heading?';font-family:var(--font-heading)':'')});}return classes.get(value).name;}
 function replaceNode(code,id,transform){const start=code.indexOf('data-node-id="'+id+'"');if(start<0)return code; const begin=code.lastIndexOf('<div',start);const openEnd=code.indexOf('>',start);const single=code.slice(begin,openEnd).trimEnd().endsWith('/');let depth=single?0:1,end=openEnd+1;const re=/<div\b[^>]*>|<\/div>/g;re.lastIndex=end;let m;while(depth&&(m=re.exec(code))){depth+=m[0].startsWith('</')?-1:(m[0].endsWith('/>')?0:1);end=re.lastIndex;}return code.slice(0,begin)+transform(code.slice(begin,end),code.slice(begin,openEnd+1).replace(/\/>$/,'>'),single?'':code.slice(openEnd+1,end-6))+code.slice(end);}
 const routeFor={'Home':'/','Public Portal':'/','Dashboard':'/dashboard','My Farm':'/my-farm','Crop Rotation':'/crop-rotation','Information Check':'/information-check','Feedback':'/feedback'};
 for(const page of pages){let code=page.code;const prefix=code.match(/const assetPathPrefix = "([^"]+)"/)[0];code=code.replace(prefix,`const assetPathPrefix = "/figma/${page.route}"`);

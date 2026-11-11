@@ -136,7 +136,7 @@ export default function HarvestHome() {
             <div className="hero-actions"><button className="button primary" onClick={() => openPanel("rotation")}>{t.plan}<Icon name="arrow" /></button><a href="#how-it-works" className="button text-button">{t.how}<Icon name="down" /></a></div>
           </div>
           <figure className="hero-visual">
-            <img className="hero-photo" src="/figma/99e55.png" alt={language === "en" ? "Two farmers walking beside mustard flowers and rice fields in rural Bangladesh" : "বাংলাদেশের সরিষা ও ধানের মাঠের পাশে দুই কৃষক"} fetchPriority="high" width="1024" height="558" />
+            <img className="hero-photo" src="/images/home-farm.jpg" alt={language === "en" ? "Aerial view of farmers tending rows of flowering crops" : "ফুলের ফসলের সারিতে কৃষকদের কাজ করার আকাশ থেকে তোলা দৃশ্য"} fetchPriority="high" width="3363" height="2242" />
             <div className="photo-scrim" />
             <figcaption className="photo-metrics"><span><Icon name="calibrated" />{t.calibrated}</span><span><Icon name="districts" />{t.districts}</span><span><Icon name="nitrogen" />{t.nitrogen}</span></figcaption>
           </figure>

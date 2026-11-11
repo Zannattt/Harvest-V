@@ -1,5 +1,7 @@
 :root {
-  --font-jakarta: "Plus Jakarta Sans";
+  --font-jakarta: "Lora";
+  --font-body: "Lora", "Noto Sans Bengali", Georgia, serif;
+  --font-heading: "Poppins", "Noto Sans Bengali", Arial, sans-serif;
   --font-bengali: "Noto Sans Bengali";
   --background: #faf9f5;
   --surface: #f3f1ea;
@@ -14,7 +16,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-body { margin: 0; background: var(--background); color: var(--text); font-family: var(--font-jakarta), Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--background); color: var(--text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 html[lang="bn"] body { font-family: var(--font-bengali), var(--font-jakarta), sans-serif; }
 button, input, select, textarea { font: inherit; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
@@ -73,7 +75,7 @@ h1 { font-size: 56px; line-height: 68px; letter-spacing: -1.12px; font-weight: 6
 .hero-description { font-size: 18px; line-height: 28px; color: var(--muted); max-width: 672px; margin-bottom: 24px; }
 .hero-actions { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
 .hero-visual { position: relative; width: 100%; height: 493.7px; overflow: hidden; border-radius: var(--radius); background: #efeeea; box-shadow: 0 1px 2px #0000000d; }
-.hero-photo { position: absolute; width: 100%; height: 127.15%; top: -13.58%; left: 0; object-fit: cover; }
+.hero-photo { position: absolute; width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; object-position: 60% 50%; }
 .photo-scrim { position: absolute; inset: 0; background: #0f0f0f33; }
 .photo-metrics { position: absolute; right: 24px; bottom: 24px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; padding: 8px 16px; max-width: 576px; border-radius: 8px; background: #faf9f5e6; backdrop-filter: blur(12px); box-shadow: 0 1px 2px #0000000d; }
 .photo-metrics > span { display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: .48px; }
@@ -273,7 +275,7 @@ html[lang="bn"] .nav-item { padding-inline: 9px; }
   .hero-actions { gap: 4px; margin-bottom: 28px; width: 100%; justify-content: center; }
   .hero-actions .button { padding-inline: 14px; font-size: 12px; }
   .hero-visual { height: 300px; }
-  .hero-photo { top: 0; height: 100%; object-position: 50% 50%; }
+  .hero-photo { object-position: 65% 50%; }
   .photo-metrics { left: 12px; right: 12px; bottom: 12px; padding: 8px 10px; gap: 6px 12px; }
   .photo-metrics > span { font-size: 9px; line-height: 14px; letter-spacing: 0; }
   .three-column { grid-template-columns: 1fr; gap: 16px; }

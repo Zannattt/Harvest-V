@@ -1,0 +1,31 @@
+/* Poppins supplies the page hierarchy and controls; Lora carries reading copy. */
+h1, h2, h3, h4, h5, h6,
+button, nav, .brand, .footer-brand, .tag, .eyebrow,
+.nav-item, .button, .mobile-nav, .mobile-page-nav,
+.farm-location, .profile-info, .footer-standards,
+.step-number, .step-detail, .benefit-metric,
+.photo-metrics, .zone-badge, .crop-season,
+.crop-variety, .crop-detail, .example-stat strong,
+.photo-upload, .soil-tests summary {
+  font-family: var(--font-heading);
+}
+input, textarea, select, .hero-description,
+.policy-copy, .dialog-intro, .notice, .page-status p {
+  font-family: var(--font-body);
+}
+.figma-page button,
+.figma-page button [class],
+.figma-page [data-name="Header"] [class],
+.figma-page [data-name="Nav"] [class],
+.figma-page [data-name^="Heading"] [class],
+.figma-page [data-name="Aside"] a [class],
+.figma-page .mobile-page-nav select {
+  font-family: var(--font-heading);
+}
+.figma-page input[name], .figma-page textarea[name],
+.figma-page .photo-upload input, .figma-page .local-reports p {
+  font-family: var(--font-body);
+}
+html[lang="bn"] body { font-family: var(--font-body); }
+.figma-page [data-node-id="115:740"] > button { flex: 1 1 0; min-width: 0; }
+.figma-page [data-node-id="115:740"] button [class] { white-space: normal; }

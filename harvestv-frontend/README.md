@@ -22,7 +22,7 @@ npm run start
 ## Included
 
 - Responsive home page matching the selected Figma frame, with the original farm image and all 23 SVG assets.
-- Locally served Plus Jakarta Sans and Noto Sans Bengali fonts.
+- Locally served Poppins for headings, taglines, navigation, and buttons; Lora for body text, with Noto Sans Bengali for Bangla glyphs.
 - English and Bangla interfaces, including the interactive panels.
 - Expandable, keyboard-accessible FAQs and mobile navigation.
 - Farm editor, example rotation preview, saved-plan dashboard, searchable example crop catalog, feedback, and profile/policy dialogs.
