@@ -39,7 +39,9 @@ npm run start
 | `/crop-rotation` | `126:976` |
 | `/feedback` | `115:719` |
 
-The five screens use the original design layers and assets, converted into scoped plain CSS. The new pages include responsive layouts and keyboard-accessible navigation. Their full Bangla translations are pending. Their language control explains this limit.
+The five screens use the original design layers and assets, converted into scoped plain CSS. All pages support Bangla and English through one shared language preference, including navigation, forms, descriptions, placeholders, and status messages. Switching languages preserves entered information. User-entered reports, names, and file names are kept as entered.
+
+Run `node scripts/check-localization.mjs` to check translation coverage across the generated pages and interaction messages. Page generation retains localization through `scripts/localize-figma.mjs`.
 
 Farm profile editing, example plan selection, and feedback saving use browser storage. Photo attachments are selected locally and are not uploaded. Information checks return an explicit unavailable-evidence message because reference retrieval is not connected. Research cards and previous expert replies are sample content from Figma.
 

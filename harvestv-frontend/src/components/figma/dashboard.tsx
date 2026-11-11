@@ -1,4 +1,7 @@
+"use client";
+import {T,useLanguage} from "@/lib/language";
 import { PhotoUpload, SoilTests } from "@/components/field-controls";
+import Link from "next/link";
 const assetPathPrefix = "/figma/dashboard";
 const imgAb6AXuDwkCg4Ky0E3IVX9KturOjZp6IhwC1OjfZyxQp6T1CRqn8S3Nn3CwXji56He3AZkRtjHjpZz9C8KXIl7HrN093IFwo1DbNroaYui3OGhkDh0V7HzK0Q9G3Axcid0IloY4ISuxnhzLes6EHk8WCibcKLpGd9HQc9Y083TRs47F2Tj7VbM7Gd6LCScCHtRWbMre0L4NPehVGhQCw8VtI9OBaUeYlytsKGmZi = `${assetPathPrefix}/4deae.png`;
 const imgContainer = `${assetPathPrefix}/be492.svg`;
@@ -25,37 +28,36 @@ const imgContainer18 = `${assetPathPrefix}/58ce0.svg`;
 const imgContainer19 = `${assetPathPrefix}/37044.svg`;
 const imgContainer20 = `${assetPathPrefix}/3ca5c.svg`;
 const imgContainer21 = `${assetPathPrefix}/936c4.svg`;
-
 export default function DashboardHarvestV() {
-  return (
-    <div className="figma-0" data-node-id="95:4092" style={{ backgroundImage: "linear-gradient(90deg, rgb(250, 249, 245) 0%, rgb(250, 249, 245) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Dashboard - HarvestV">
+    const {t,language}=useLanguage();
+    return (<div className="figma-0" data-node-id="95:4092" style={{ backgroundImage: "linear-gradient(90deg, rgb(250, 249, 245) 0%, rgb(250, 249, 245) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Dashboard - HarvestV">
       <div className="figma-1" data-node-id="95:4093" data-name="Main">
         <div className="figma-2" data-node-id="95:4094" data-name="Container">
           <div className="figma-3" data-node-id="95:4095" data-name="Top Action / Context Bar">
             <div className="figma-4" data-node-id="95:4096" data-name="Container">
               <div className="figma-5" data-node-id="95:4097" data-name="Background">
                 <div className="figma-6" data-node-id="95:4098" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer} />
+                  <img alt="" className="figma-7" src={imgContainer}/>
                 </div>
               </div>
               <div className="figma-8" data-node-id="95:4100" data-name="Container">
                 <div className="figma-9" data-node-id="95:4101" data-name="Container">
                   <div className="figma-10" data-node-id="95:4102" data-name="Container">
                     <div className="figma-11" data-node-id="95:4103">
-                      <p className="figma-12">Shonar Bangla Agro — Plot 4 (1.5 Bigha)</p>
+                      <p className="figma-12"><T text="Shonar Bangla Agro — Plot 4 (1.5 Bigha)"/></p>
                     </div>
                   </div>
                   <div className="figma-13" data-node-id="95:4104" data-name="Background">
                     <div className="figma-14" data-node-id="95:4105">
-                      <p className="figma-15">SILT LOAM</p>
+                      <p className="figma-15"><T text="SILT LOAM"/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-16" data-node-id="95:4106" data-name="Container">
-                  <div className="figma-17" data-node-id="95:4107" data-name="Background" />
+                  <div className="figma-17" data-node-id="95:4107" data-name="Background"/>
                   <div className="figma-10" data-node-id="95:4108" data-name="Container">
                     <div className="figma-18" data-node-id="95:4109">
-                      <p className="figma-19">{`BMD Weather & BARI Agronomic Model • Updated today at 07:30 BST`}</p>
+                      <p className="figma-19"><T text="BMD Weather & BARI Agronomic Model • Updated today at 07:30 BST"/></p>
                     </div>
                   </div>
                 </div>
@@ -63,25 +65,25 @@ export default function DashboardHarvestV() {
             </div>
             <div className="figma-20" data-node-id="95:4110" data-name="Container">
               <div className="figma-10" data-node-id="95:4111" data-name="Container">
-                <button type="button" className="figma-21" data-node-id="95:4112" data-name="Button">
+                <button type="button" data-action={"Change field"} className="figma-21" data-node-id="95:4112" data-name="Button">
                   <div className="figma-22" data-node-id="95:4113" data-name="Icon">
-                    <img alt="" className="figma-7" src={imgIcon} />
+                    <img alt="" className="figma-7" src={imgIcon}/>
                   </div>
                   <div className="figma-23" data-node-id="95:4114">
-                    <p className="figma-19">Change field</p>
+                    <p className="figma-19"><T text="Change field"/></p>
                   </div>
                   <div className="figma-24" data-node-id="95:4115" data-name="Icon">
-                    <img alt="" className="figma-7" src={imgIcon1} />
+                    <img alt="" className="figma-7" src={imgIcon1}/>
                   </div>
                 </button>
               </div>
-              <button type="button" className="figma-25" data-node-id="95:4116" data-name="Button">
+              <button type="button" data-action={"+ Add new farm"} className="figma-25" data-node-id="95:4116" data-name="Button">
                 <div className="figma-26" data-node-id="95:4117" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer1} />
+                  <img alt="" className="figma-7" src={imgContainer1}/>
                 </div>
                 <div className="figma-27" data-node-id="95:4119" data-name="Container">
                   <div className="figma-28" data-node-id="95:4120">
-                    <p className="figma-19">+ Add new farm</p>
+                    <p className="figma-19"><T text="+ Add new farm"/></p>
                   </div>
                 </div>
               </button>
@@ -94,62 +96,62 @@ export default function DashboardHarvestV() {
                   <div className="figma-33" data-node-id="95:4125" data-name="Container">
                     <div className="figma-34" data-node-id="95:4126" data-name="Background">
                       <div className="figma-35" data-node-id="95:4127">
-                        <p className="figma-36">Robi 2024–25 Season</p>
+                        <p className="figma-36"><T text="Robi 2024–25 Season"/></p>
                       </div>
                     </div>
                     <div className="figma-37" data-node-id="95:4128" data-name="Background">
-                      <div className="figma-38" data-node-id="95:4129" data-name="Background" />
+                      <div className="figma-38" data-node-id="95:4129" data-name="Background"/>
                       <div className="figma-39" data-node-id="95:4130">
-                        <p className="figma-15">Day 44 of 115</p>
+                        <p className="figma-15"><T text="Day 44 of 115"/></p>
                       </div>
                     </div>
                   </div>
                   <div className="figma-10" data-node-id="95:4131" data-name="Container">
                     <div className="figma-40" data-node-id="95:4132">
-                      <p className="figma-36">38% of cycle complete</p>
+                      <p className="figma-36"><T text="38% of cycle complete"/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-41" data-node-id="95:4133" data-name="Container">
                   <div className="figma-42" data-node-id="95:4134" data-name="Heading 2">
                     <div className="figma-43" data-node-id="95:4135">
-                      <p className="figma-44">Boro Rice — BRRI dhan29</p>
+                      <p className="figma-44"><T text="Boro Rice — BRRI dhan29"/></p>
                     </div>
                   </div>
                   <div className="figma-16" data-node-id="95:4136" data-name="Container">
                     <div className="figma-45" data-node-id="95:4137" data-name="Container">
-                      <img alt="" className="figma-7" src={imgContainer2} />
+                      <img alt="" className="figma-7" src={imgContainer2}/>
                     </div>
                     <div className="figma-10" data-node-id="95:4139" data-name="Container">
                       <div className="figma-46" data-node-id="95:4140">
-                        <p className="figma-19">Current Phase:</p>
+                        <p className="figma-19"><T text="Current Phase:"/></p>
                       </div>
                     </div>
                     <div className="figma-10" data-node-id="95:4141" data-name="Container">
                       <div className="figma-47" data-node-id="95:4142">
-                        <p className="figma-19">Active Tillering</p>
+                        <p className="figma-19"><T text="Active Tillering"/></p>
                       </div>
                     </div>
                     <div className="figma-10" data-node-id="95:4143" data-name="Container">
                       <div className="figma-18" data-node-id="95:4144">
-                        <p className="figma-19">•</p>
+                        <p className="figma-19"><T text="•"/></p>
                       </div>
                     </div>
                     <div className="figma-10" data-node-id="95:4145" data-name="Container">
                       <div className="figma-18" data-node-id="95:4146">
-                        <p className="figma-19">Harvest in ~71 days</p>
+                        <p className="figma-19"><T text="Harvest in ~71 days"/></p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="figma-48" data-node-id="95:4147" data-name="Background">
-                  <div className="figma-49" data-node-id="95:4148" data-name="Background" />
+                  <div className="figma-49" data-node-id="95:4148" data-name="Background"/>
                 </div>
                 <div className="figma-50" data-node-id="95:4149" data-name="Background+Border">
                   <div className="figma-51" data-node-id="95:4150" data-name="Background">
                     <div className="figma-52">
                       <div className="figma-53" data-node-id="95:4151" data-name="Container">
-                        <img alt="" className="figma-7" src={imgContainer3} />
+                        <img alt="" className="figma-7" src={imgContainer3}/>
                       </div>
                     </div>
                   </div>
@@ -158,25 +160,25 @@ export default function DashboardHarvestV() {
                       <div className="figma-56" data-node-id="95:4154" data-name="Container">
                         <div className="figma-10" data-node-id="95:4155" data-name="Container">
                           <div className="figma-57" data-node-id="95:4156">
-                            <p className="figma-36">NEXT REQUIRED ACTION</p>
+                            <p className="figma-36"><T text="NEXT REQUIRED ACTION"/></p>
                           </div>
                         </div>
                         <div className="figma-58" data-node-id="95:4157" data-name="Overlay">
                           <div className="figma-59" data-node-id="95:4158">
-                            <p className="figma-15">Due Tomorrow</p>
+                            <p className="figma-15"><T text="Due Tomorrow"/></p>
                           </div>
                         </div>
                       </div>
                       <div className="figma-42" data-node-id="95:4159" data-name="Container">
                         <div className="figma-60" data-node-id="95:4160">
-                          <p className="figma-61">Drain plot for AWD check tomorrow morning; schedule Urea top-</p>
-                          <p className="figma-62">dress in 4 days.</p>
+                          <p className="figma-61"><T text="Drain plot for AWD check tomorrow morning; schedule Urea top-"/></p>
+                          <p className="figma-62"><T text="dress in 4 days."/></p>
                         </div>
                       </div>
                       <div className="figma-42" data-node-id="95:4161" data-name="Container">
                         <div className="figma-63" data-node-id="95:4162">
-                          <p className="figma-64">{`Field was flooded 2 days ago. Alternate Wetting & Drying (AWD) cylinder check`}</p>
-                          <p className="figma-19">required at 08:00 AM.</p>
+                          <p className="figma-64"><T text="Field was flooded 2 days ago. Alternate Wetting & Drying (AWD) cylinder check"/></p>
+                          <p className="figma-19"><T text="required at 08:00 AM."/></p>
                         </div>
                       </div>
                     </div>
@@ -185,24 +187,24 @@ export default function DashboardHarvestV() {
               </div>
               <div className="figma-65" data-node-id="95:4163" data-name="Margin">
                 <div className="figma-66" data-node-id="95:4164" data-name="Container">
-                  <button type="button" className="figma-67" data-node-id="95:4165" data-name="Button">
+                  <button type="button" data-action={"Log Field Action"} className="figma-67" data-node-id="95:4165" data-name="Button">
                     <div className="figma-68" data-node-id="95:4166" data-name="Container">
-                      <img alt="" className="figma-7" src={imgContainer4} />
+                      <img alt="" className="figma-7" src={imgContainer4}/>
                     </div>
                     <div className="figma-27" data-node-id="95:4168" data-name="Container">
                       <div className="figma-28" data-node-id="95:4169">
-                        <p className="figma-19">Log Field Action</p>
+                        <p className="figma-19"><T text="Log Field Action"/></p>
                       </div>
                     </div>
                   </button>
-                  <button type="button" className="figma-69" data-node-id="95:4170" data-name="Button">
+                  <button type="button" data-action={"Fertilizer Schedule"} className="figma-69" data-node-id="95:4170" data-name="Button">
                     <div className="figma-70" data-node-id="95:4171" data-name="Container">
-                      <img alt="" className="figma-7" src={imgContainer5} />
+                      <img alt="" className="figma-7" src={imgContainer5}/>
                     </div>
                     <div className="figma-71" data-node-id="95:4173" data-name="Container">
                       <div className="figma-72">
                         <div className="figma-23" data-node-id="95:4174">
-                          <p className="figma-19">Fertilizer Schedule</p>
+                          <p className="figma-19"><T text="Fertilizer Schedule"/></p>
                         </div>
                       </div>
                     </div>
@@ -214,7 +216,7 @@ export default function DashboardHarvestV() {
               <div className="figma-74" data-node-id="95:4176" data-name="Background+Shadow">
                 <div className="figma-75" data-node-id="95:4177" data-name="AB6AXuDWKCg4ky0e3I_vX9kturOj-Zp6ihwC1ojfZYXQp6t1-cRQN8S3nn3CwXji56He3aZkRtjHjp-Zz9c8kXIl7hr_n093IFwo1dbNroaYUI3OGhkDh0V7hzK-0Q9_G3axcid0-IloY4i-SuxnhzLes6eHk8wCibcKLpGd9hQc9Y083TRs47F2tj7vbM7gd6lCScCHtRWbMre0l4NPehVGhQCw8VtI9OBaUeYlytsKGmZi">
                   <div className="figma-76">
-                    <img alt="" className="figma-77" src={imgAb6AXuDwkCg4Ky0E3IVX9KturOjZp6IhwC1OjfZyxQp6T1CRqn8S3Nn3CwXji56He3AZkRtjHjpZz9C8KXIl7HrN093IFwo1DbNroaYui3OGhkDh0V7HzK0Q9G3Axcid0IloY4ISuxnhzLes6EHk8WCibcKLpGd9HQc9Y083TRs47F2Tj7VbM7Gd6LCScCHtRWbMre0L4NPehVGhQCw8VtI9OBaUeYlytsKGmZi} />
+                    <img alt="" className="figma-77" src={imgAb6AXuDwkCg4Ky0E3IVX9KturOjZp6IhwC1OjfZyxQp6T1CRqn8S3Nn3CwXji56He3AZkRtjHjpZz9C8KXIl7HrN093IFwo1DbNroaYui3OGhkDh0V7HzK0Q9G3Axcid0IloY4ISuxnhzLes6EHk8WCibcKLpGd9HQc9Y083TRs47F2Tj7VbM7Gd6LCScCHtRWbMre0L4NPehVGhQCw8VtI9OBaUeYlytsKGmZi}/>
                   </div>
                 </div>
                 <div className="figma-78" data-node-id="95:4178" data-name="Background">
@@ -222,20 +224,20 @@ export default function DashboardHarvestV() {
                     <div className="figma-10" data-node-id="95:4180" data-name="Container">
                       <div className="figma-79" data-node-id="95:4181" data-name="Container">
                         <div className="figma-80" data-node-id="95:4182">
-                          <p className="figma-36">Crop Health Index</p>
+                          <p className="figma-36"><T text="Crop Health Index"/></p>
                         </div>
                       </div>
                       <div className="figma-42" data-node-id="95:4183" data-name="Container">
                         <div className="figma-81" data-node-id="95:4184">
-                          <p className="figma-82">NDVI 0.74 •</p>
-                          <p className="figma-12">Vigorous</p>
+                          <p className="figma-82"><T text="NDVI 0.74 •"/></p>
+                          <p className="figma-12"><T text="Vigorous"/></p>
                         </div>
                       </div>
                     </div>
                     <div className="figma-83" data-node-id="95:4185" data-name="Overlay+OverlayBlur">
                       <div className="figma-84" data-node-id="95:4186">
-                        <p className="figma-85">Sentinel-</p>
-                        <p className="figma-15">2</p>
+                        <p className="figma-85"><T text="Sentinel-"/></p>
+                        <p className="figma-15"><T text="2"/></p>
                       </div>
                     </div>
                   </div>
@@ -244,27 +246,27 @@ export default function DashboardHarvestV() {
               <div className="figma-86" data-node-id="95:4187" data-name="Container">
                 <div className="figma-87" data-node-id="95:4188" data-name="Background+Shadow">
                   <div className="figma-88" data-node-id="95:4189">
-                    <p className="figma-15">TARGET YIELD</p>
+                    <p className="figma-15"><T text="TARGET YIELD"/></p>
                   </div>
                   <div className="figma-89" data-node-id="95:4190" data-name="Paragraph">
                     <div className="figma-90" data-node-id="95:4191">
-                      <p className="figma-12">6.8</p>
+                      <p className="figma-12"><T text="6.8"/></p>
                     </div>
                     <div className="figma-91" data-node-id="95:4192">
-                      <p className="figma-19">Ton/Ha</p>
+                      <p className="figma-19"><T text="Ton/Ha"/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-87" data-node-id="95:4193" data-name="Background+Shadow">
                   <div className="figma-88" data-node-id="95:4194">
-                    <p className="figma-15">UREA TOPDRESS #2</p>
+                    <p className="figma-15"><T text="UREA TOPDRESS #2"/></p>
                   </div>
                   <div className="figma-89" data-node-id="95:4195" data-name="Paragraph">
                     <div className="figma-90" data-node-id="95:4196">
-                      <p className="figma-12">4 Days</p>
+                      <p className="figma-12"><T text="4 Days"/></p>
                     </div>
                     <div className="figma-91" data-node-id="95:4197">
-                      <p className="figma-19">left</p>
+                      <p className="figma-19"><T text="left"/></p>
                     </div>
                   </div>
                 </div>
@@ -276,25 +278,25 @@ export default function DashboardHarvestV() {
               <div className="figma-33" data-node-id="95:4200" data-name="Container">
                 <div className="figma-93" data-node-id="95:4201" data-name="Background">
                   <div className="figma-94" data-node-id="95:4202" data-name="Container">
-                    <img alt="" className="figma-7" src={imgContainer6} />
+                    <img alt="" className="figma-7" src={imgContainer6}/>
                   </div>
                 </div>
                 <div className="figma-10" data-node-id="95:4204" data-name="Container">
                   <div className="figma-42" data-node-id="95:4205" data-name="Heading 3">
                     <div className="figma-95" data-node-id="95:4206">
-                      <p className="figma-12">{`Today's Weather & Action Alerts`}</p>
+                      <p className="figma-12"><T text="Today's Weather & Action Alerts"/></p>
                     </div>
                   </div>
                   <div className="figma-42" data-node-id="95:4207" data-name="Container">
                     <div className="figma-96" data-node-id="95:4208">
-                      <p className="figma-15">Trishal, Mymensingh Local Forecast</p>
+                      <p className="figma-15"><T text="Trishal, Mymensingh Local Forecast"/></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="figma-97" data-node-id="95:4209" data-name="Background">
                 <div className="figma-96" data-node-id="95:4210">
-                  <p className="figma-15">Updated 07:30 BST</p>
+                  <p className="figma-15"><T text="Updated 07:30 BST"/></p>
                 </div>
               </div>
             </div>
@@ -304,38 +306,38 @@ export default function DashboardHarvestV() {
                   <div className="figma-55">
                     <div className="figma-42" data-node-id="95:4214" data-name="Container">
                       <div className="figma-100" data-node-id="95:4215">
-                        <p className="figma-15">CURRENT TEMPERATURE</p>
+                        <p className="figma-15"><T text="CURRENT TEMPERATURE"/></p>
                       </div>
                     </div>
                     <div className="figma-101" data-node-id="95:4216" data-name="Paragraph">
                       <div className="figma-102" data-node-id="95:4217">
-                        <p className="figma-44">28°C</p>
+                        <p className="figma-44"><T text="28°C"/></p>
                       </div>
                       <div className="figma-91" data-node-id="95:4218">
-                        <p className="figma-19">Sunny • High 31°</p>
+                        <p className="figma-19"><T text="Sunny • High 31°"/></p>
                       </div>
                     </div>
                     <div className="figma-103" data-node-id="95:4219" data-name="Container">
                       <div className="figma-104" data-node-id="95:4220" data-name="Container">
-                        <img alt="" className="figma-7" src={imgContainer7} />
+                        <img alt="" className="figma-7" src={imgContainer7}/>
                       </div>
                       <div className="figma-10" data-node-id="95:4222" data-name="Container">
                         <div className="figma-105" data-node-id="95:4223">
-                          <p className="figma-19">12 mm rain past 7 days (Dry spell ahead)</p>
+                          <p className="figma-19"><T text="12 mm rain past 7 days (Dry spell ahead)"/></p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="figma-106" data-node-id="95:4224" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer8} />
+                  <img alt="" className="figma-7" src={imgContainer8}/>
                 </div>
               </div>
               <div className="figma-107" data-node-id="95:4226" data-name="Background+Border">
                 <div className="figma-51" data-node-id="95:4227" data-name="Background">
                   <div className="figma-52">
                     <div className="figma-108" data-node-id="95:4228" data-name="Container">
-                      <img alt="" className="figma-7" src={imgContainer9} />
+                      <img alt="" className="figma-7" src={imgContainer9}/>
                     </div>
                   </div>
                 </div>
@@ -344,24 +346,24 @@ export default function DashboardHarvestV() {
                     <div className="figma-56" data-node-id="95:4231" data-name="Container">
                       <div className="figma-109" data-node-id="95:4232" data-name="Background">
                         <div className="figma-110" data-node-id="95:4233">
-                          <p className="figma-15">Upcoming Active Alert</p>
+                          <p className="figma-15"><T text="Upcoming Active Alert"/></p>
                         </div>
                       </div>
                       <div className="figma-10" data-node-id="95:4234" data-name="Container">
                         <div className="figma-111" data-node-id="95:4235">
-                          <p className="figma-15">Due: 15 Mar</p>
+                          <p className="figma-15"><T text="Due: 15 Mar"/></p>
                         </div>
                       </div>
                     </div>
                     <div className="figma-42" data-node-id="95:4236" data-name="Container">
                       <div className="figma-112" data-node-id="95:4237">
                         <p className="figma-113">
-                          <span className="figma-62">{`Upcoming: Prep land for `}</span>
-                          <span className="figma-114">Kharif-1 BARI Mung-6</span>
-                          <span className="figma-62">{` by March 15`}</span>
+                          <span className="figma-62"><T text="Upcoming: Prep land for "/></span>
+                          <span className="figma-114"><T text="Kharif-1 BARI Mung-6"/></span>
+                          <span className="figma-62"><T text=" by March 15"/></span>
                         </p>
-                        <p className="figma-61">to capture pre-monsoon shower and optimize legume</p>
-                        <p className="figma-62">nodulation.</p>
+                        <p className="figma-61"><T text="to capture pre-monsoon shower and optimize legume"/></p>
+                        <p className="figma-62"><T text="nodulation."/></p>
                       </div>
                     </div>
                   </div>
@@ -373,31 +375,31 @@ export default function DashboardHarvestV() {
             <div className="figma-56" data-node-id="95:4239" data-name="Container">
               <div className="figma-116" data-node-id="95:4240" data-name="Paragraph">
                 <div className="figma-88" data-node-id="95:4241">
-                  <p className="figma-15">AGRONOMIC STEWARDSHIP</p>
+                  <p className="figma-15"><T text="AGRONOMIC STEWARDSHIP"/></p>
                 </div>
                 <div className="figma-117" data-node-id="95:4242">
-                  <p className="figma-118">Active Crop Rotation Sequence (1-Year Cycle)</p>
+                  <p className="figma-118"><T text="Active Crop Rotation Sequence (1-Year Cycle)"/></p>
                 </div>
               </div>
               <div className="figma-119" data-node-id="95:4243" data-name="Container">
-                <button type="button" className="figma-120" data-node-id="95:4244" data-name="Link">
+                <button type="button" data-action={"View full plan details"} className="figma-120" data-node-id="95:4244" data-name="Link">
                   <div className="figma-10" data-node-id="95:4245" data-name="Container">
                     <div className="figma-121" data-node-id="95:4246">
-                      <p className="figma-19">View full plan details</p>
+                      <p className="figma-19"><T text="View full plan details"/></p>
                     </div>
                   </div>
                   <div className="figma-122" data-node-id="95:4247" data-name="Container">
-                    <img alt="" className="figma-7" src={imgContainer10} />
+                    <img alt="" className="figma-7" src={imgContainer10}/>
                   </div>
                 </button>
-                <button type="button" className="figma-123" data-node-id="95:4249" data-name="Button">
+                <button type="button" data-action={"Plan next crop"} className="figma-123" data-node-id="95:4249" data-name="Button">
                   <div className="figma-27" data-node-id="95:4250" data-name="Container">
                     <div className="figma-28" data-node-id="95:4251">
-                      <p className="figma-19">Plan next crop</p>
+                      <p className="figma-19"><T text="Plan next crop"/></p>
                     </div>
                   </div>
                   <div className="figma-124" data-node-id="95:4252" data-name="Container">
-                    <img alt="" className="figma-7" src={imgContainer11} />
+                    <img alt="" className="figma-7" src={imgContainer11}/>
                   </div>
                 </button>
               </div>
@@ -409,29 +411,29 @@ export default function DashboardHarvestV() {
                     <div className="figma-56" data-node-id="95:4257" data-name="Container">
                       <div className="figma-129" data-node-id="95:4258" data-name="Background">
                         <div className="figma-130" data-node-id="95:4259">
-                          <p className="figma-15">Step 1 • Active Now</p>
+                          <p className="figma-15"><T text="Step 1 • Active Now"/></p>
                         </div>
                       </div>
                       <div className="figma-10" data-node-id="95:4260" data-name="Container">
                         <div className="figma-131" data-node-id="95:4261">
-                          <p className="figma-15">Robi 2024–25</p>
+                          <p className="figma-15"><T text="Robi 2024–25"/></p>
                         </div>
                       </div>
                     </div>
                     <div className="figma-132" data-node-id="95:4262" data-name="Heading 4">
                       <div className="figma-133" data-node-id="95:4263">
-                        <p className="figma-12">Boro Rice</p>
+                        <p className="figma-12"><T text="Boro Rice"/></p>
                       </div>
                     </div>
                     <div className="figma-42" data-node-id="95:4264" data-name="Container">
                       <div className="figma-134" data-node-id="95:4265">
-                        <p className="figma-19">Variety: BRRI dhan29</p>
+                        <p className="figma-19"><T text="Variety: BRRI dhan29"/></p>
                       </div>
                     </div>
                     <div className="figma-132" data-node-id="95:4266" data-name="Container">
                       <div className="figma-135" data-node-id="95:4267">
-                        <p className="figma-64">Active Tillering stage. High gross yield</p>
-                        <p className="figma-19">carbohydrate phase.</p>
+                        <p className="figma-64"><T text="Active Tillering stage. High gross yield"/></p>
+                        <p className="figma-19"><T text="carbohydrate phase."/></p>
                       </div>
                     </div>
                   </div>
@@ -442,14 +444,14 @@ export default function DashboardHarvestV() {
                       <div className="figma-71" data-node-id="95:4270" data-name="Container">
                         <div className="figma-128">
                           <div className="figma-96" data-node-id="95:4271">
-                            <p className="figma-15">Dec → April</p>
+                            <p className="figma-15"><T text="Dec → April"/></p>
                           </div>
                         </div>
                       </div>
                       <div className="figma-71" data-node-id="95:4272" data-name="Container">
                         <div className="figma-128">
                           <div className="figma-59" data-node-id="95:4273">
-                            <p className="figma-15">Harvest in 71 days</p>
+                            <p className="figma-15"><T text="Harvest in 71 days"/></p>
                           </div>
                         </div>
                       </div>
@@ -463,29 +465,29 @@ export default function DashboardHarvestV() {
                     <div className="figma-56" data-node-id="95:4276" data-name="Container">
                       <div className="figma-139" data-node-id="95:4277" data-name="Background">
                         <div className="figma-110" data-node-id="95:4278">
-                          <p className="figma-15">Step 2 • Upcoming</p>
+                          <p className="figma-15"><T text="Step 2 • Upcoming"/></p>
                         </div>
                       </div>
                       <div className="figma-10" data-node-id="95:4279" data-name="Container">
                         <div className="figma-131" data-node-id="95:4280">
-                          <p className="figma-15">Kharif-1 2025</p>
+                          <p className="figma-15"><T text="Kharif-1 2025"/></p>
                         </div>
                       </div>
                     </div>
                     <div className="figma-132" data-node-id="95:4281" data-name="Heading 4">
                       <div className="figma-133" data-node-id="95:4282">
-                        <p className="figma-12">Mungbean</p>
+                        <p className="figma-12"><T text="Mungbean"/></p>
                       </div>
                     </div>
                     <div className="figma-42" data-node-id="95:4283" data-name="Container">
                       <div className="figma-134" data-node-id="95:4284">
-                        <p className="figma-19">Variety: BARI Mung-6</p>
+                        <p className="figma-19"><T text="Variety: BARI Mung-6"/></p>
                       </div>
                     </div>
                     <div className="figma-132" data-node-id="95:4285" data-name="Container">
                       <div className="figma-135" data-node-id="95:4286">
-                        <p className="figma-64">Nitrogen fixer: Restores root nodule</p>
-                        <p className="figma-19">bacteria, disrupts rice pests.</p>
+                        <p className="figma-64"><T text="Nitrogen fixer: Restores root nodule"/></p>
+                        <p className="figma-19"><T text="bacteria, disrupts rice pests."/></p>
                       </div>
                     </div>
                   </div>
@@ -496,14 +498,14 @@ export default function DashboardHarvestV() {
                       <div className="figma-71" data-node-id="95:4289" data-name="Container">
                         <div className="figma-128">
                           <div className="figma-96" data-node-id="95:4290">
-                            <p className="figma-15">May → July</p>
+                            <p className="figma-15"><T text="May → July"/></p>
                           </div>
                         </div>
                       </div>
                       <div className="figma-71" data-node-id="95:4291" data-name="Container">
                         <div className="figma-128">
                           <div className="figma-140" data-node-id="95:4292">
-                            <p className="figma-15">Land Prep: Mid March</p>
+                            <p className="figma-15"><T text="Land Prep: Mid March"/></p>
                           </div>
                         </div>
                       </div>
@@ -517,29 +519,29 @@ export default function DashboardHarvestV() {
                     <div className="figma-56" data-node-id="95:4295" data-name="Container">
                       <div className="figma-141" data-node-id="95:4296" data-name="Background">
                         <div className="figma-142" data-node-id="95:4297">
-                          <p className="figma-15">Step 3 • Planned</p>
+                          <p className="figma-15"><T text="Step 3 • Planned"/></p>
                         </div>
                       </div>
                       <div className="figma-10" data-node-id="95:4298" data-name="Container">
                         <div className="figma-131" data-node-id="95:4299">
-                          <p className="figma-15">Kharif-2 2025</p>
+                          <p className="figma-15"><T text="Kharif-2 2025"/></p>
                         </div>
                       </div>
                     </div>
                     <div className="figma-132" data-node-id="95:4300" data-name="Heading 4">
                       <div className="figma-133" data-node-id="95:4301">
-                        <p className="figma-12">T. Aman Rice</p>
+                        <p className="figma-12"><T text="T. Aman Rice"/></p>
                       </div>
                     </div>
                     <div className="figma-42" data-node-id="95:4302" data-name="Container">
                       <div className="figma-134" data-node-id="95:4303">
-                        <p className="figma-19">Variety: BRRI dhan87</p>
+                        <p className="figma-19"><T text="Variety: BRRI dhan87"/></p>
                       </div>
                     </div>
                     <div className="figma-132" data-node-id="95:4304" data-name="Container">
                       <div className="figma-135" data-node-id="95:4305">
-                        <p className="figma-64">Rainfed monsoon crop utilizing residual</p>
-                        <p className="figma-19">fixed nitrogen.</p>
+                        <p className="figma-64"><T text="Rainfed monsoon crop utilizing residual"/></p>
+                        <p className="figma-19"><T text="fixed nitrogen."/></p>
                       </div>
                     </div>
                   </div>
@@ -550,14 +552,14 @@ export default function DashboardHarvestV() {
                       <div className="figma-71" data-node-id="95:4308" data-name="Container">
                         <div className="figma-128">
                           <div className="figma-96" data-node-id="95:4309">
-                            <p className="figma-15">Aug → Nov</p>
+                            <p className="figma-15"><T text="Aug → Nov"/></p>
                           </div>
                         </div>
                       </div>
                       <div className="figma-71" data-node-id="95:4310" data-name="Container">
                         <div className="figma-128">
                           <div className="figma-96" data-node-id="95:4311">
-                            <p className="figma-15">Seedbed: Mid July</p>
+                            <p className="figma-15"><T text="Seedbed: Mid July"/></p>
                           </div>
                         </div>
                       </div>
@@ -571,25 +573,25 @@ export default function DashboardHarvestV() {
             <div className="figma-4" data-node-id="95:4313" data-name="Container">
               <div className="figma-144" data-node-id="95:4314" data-name="Background+Border">
                 <div className="figma-145" data-node-id="95:4315" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer12} />
+                  <img alt="" className="figma-7" src={imgContainer12}/>
                 </div>
               </div>
               <div className="figma-10" data-node-id="95:4317" data-name="Container">
                 <div className="figma-42" data-node-id="95:4318" data-name="Heading 4">
                   <div className="figma-146" data-node-id="95:4319">
-                    <p className="figma-19">Managing a new plot? Add your farm in 2 minutes.</p>
+                    <p className="figma-19"><T text="Managing a new plot? Add your farm in 2 minutes."/></p>
                   </div>
                 </div>
                 <div className="figma-42" data-node-id="95:4320" data-name="Container">
                   <div className="figma-105" data-node-id="95:4321">
-                    <p className="figma-19">Connect your second parcel or upload a soil test report to get automated AWD and fertilizer schedules.</p>
+                    <p className="figma-19"><T text="Connect your second parcel or upload a soil test report to get automated AWD and fertilizer schedules."/></p>
                   </div>
                 </div>
               </div>
             </div>
-            <button type="button" className="figma-147" data-node-id="95:4322" data-name="Button">
+            <button type="button" data-action={"+ Add your farm"} className="figma-147" data-node-id="95:4322" data-name="Button">
               <div className="figma-28" data-node-id="95:4323">
-                <p className="figma-19">+ Add your farm</p>
+                <p className="figma-19"><T text="+ Add your farm"/></p>
               </div>
             </button>
           </div>
@@ -599,19 +601,19 @@ export default function DashboardHarvestV() {
         <div className="figma-71" data-node-id="95:4325" data-name="Container">
           <div className="figma-149">
             <div className="figma-150" data-node-id="95:4326" data-name="Background+Border">
-              <div className="figma-17" data-node-id="95:4327" data-name="Background" />
+              <div className="figma-17" data-node-id="95:4327" data-name="Background"/>
               <div className="figma-71" data-node-id="95:4328" data-name="Container">
                 <div className="figma-128">
                   <div className="figma-151" data-node-id="95:4329">
-                    <p className="figma-36">Plot 4 Active (1.5 Bigha)</p>
+                    <p className="figma-36"><T text="Plot 4 Active (1.5 Bigha)"/></p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="figma-152" data-node-id="95:4330" data-name="Vertical Divider" />
+            <div className="figma-152" data-node-id="95:4330" data-name="Vertical Divider"/>
             <div className="figma-10" data-node-id="95:4331" data-name="Container">
               <div className="figma-96" data-node-id="95:4332">
-                <p className="figma-15">Mymensingh Horticultural Sub-Region</p>
+                <p className="figma-15"><T text="Mymensingh Horticultural Sub-Region"/></p>
               </div>
             </div>
           </div>
@@ -619,24 +621,24 @@ export default function DashboardHarvestV() {
         <div className="figma-71" data-node-id="95:4333" data-name="Container">
           <div className="figma-149">
             <div className="figma-153" data-node-id="95:4334" data-name="Background+Border">
-              <button type="button" className="figma-154" data-node-id="95:4335" data-name="Button">
+              <button type="button" data-action={"EN"} aria-pressed={language === "en"} lang="en" className="figma-154" data-node-id="95:4335" data-name="Button">
                 <div className="figma-155">
                   <div className="figma-156" data-node-id="95:4336">
-                    <p className="figma-36">EN</p>
+                    <p className="figma-36"><T text="EN"/></p>
                   </div>
                 </div>
               </button>
-              <button type="button" className="figma-157" data-node-id="95:4337" data-name="Button">
+              <button type="button" data-action={"বাংলা"} aria-pressed={language === "bn"} lang="bn" className="figma-157" data-node-id="95:4337" data-name="Button">
                 <div className="figma-155">
                   <div className="figma-158" data-node-id="95:4338">
-                    <p className="figma-36">বাংলা</p>
+                    <p className="figma-36"><T text="বাংলা"/></p>
                   </div>
                 </div>
               </button>
             </div>
             <div className="figma-159" data-node-id="95:4339" data-name="Background">
               <div className="figma-122" data-node-id="95:4340" data-name="Container">
-                <img alt="" className="figma-7" src={imgContainer13} />
+                <img alt="" className="figma-7" src={imgContainer13}/>
               </div>
             </div>
           </div>
@@ -648,13 +650,13 @@ export default function DashboardHarvestV() {
             <div className="figma-162" data-node-id="95:4344" data-name="Container">
               <div className="figma-163" data-node-id="95:4345" data-name="Background+Border">
                 <div className="figma-164" data-node-id="95:4346" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer14} />
+                  <img alt="" className="figma-7" src={imgContainer14}/>
                 </div>
               </div>
               <div className="figma-10" data-node-id="95:4348" data-name="Container">
                 <div className="figma-42" data-node-id="95:4349" data-name="Container">
                   <div className="figma-165" data-node-id="95:4350">
-                    <p className="figma-19">HarvestV</p>
+                    <p className="figma-19"><T text="HarvestV"/></p>
                   </div>
                 </div>
               </div>
@@ -664,75 +666,75 @@ export default function DashboardHarvestV() {
                 <div className="figma-127" data-node-id="95:4356" data-name="Container">
                   <div className="figma-128">
                     <div className="figma-168" data-node-id="95:4357">
-                      <p className="figma-15">ACTIVE PLOT</p>
+                      <p className="figma-15"><T text="ACTIVE PLOT"/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-127" data-node-id="95:4358" data-name="Container">
                   <div className="figma-169">
                     <div className="figma-170" data-node-id="95:4359">
-                      <p className="figma-36">Mymensingh • Plot 4</p>
+                      <p className="figma-36"><T text="Mymensingh • Plot 4"/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-127" data-node-id="95:4360" data-name="Container">
                   <div className="figma-128">
                     <div className="figma-171" data-node-id="95:4361">
-                      <p className="figma-15">1.5 Bigha • Clay Loam</p>
+                      <p className="figma-15"><T text="1.5 Bigha • Clay Loam"/></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="figma-172" data-node-id="95:4362" data-name="Nav">
-              <a href="/dashboard" className="figma-173" data-node-id="95:4363" data-name="Link">
+              <Link href="/dashboard" className="figma-173" data-node-id="95:4363" data-name="Link">
                 <div className="figma-68" data-node-id="95:4364" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer15} />
+                  <img alt="" className="figma-7" src={imgContainer15}/>
                 </div>
                 <div className="figma-174" data-node-id="95:4366">
-                  <p className="figma-62">Dashboard</p>
+                  <p className="figma-62"><T text="Dashboard"/></p>
                 </div>
-              </a>
-              <a href="/my-farm" className="figma-175" data-node-id="95:4367" data-name="Link">
+              </Link>
+              <Link href="/my-farm" className="figma-175" data-node-id="95:4367" data-name="Link">
                 <div className="figma-176" data-node-id="95:4368" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer16} />
+                  <img alt="" className="figma-7" src={imgContainer16}/>
                 </div>
                 <div className="figma-177" data-node-id="95:4370">
-                  <p className="figma-19">My Farm</p>
+                  <p className="figma-19"><T text="My Farm"/></p>
                 </div>
-              </a>
-              <a href="/crop-rotation" className="figma-175" data-node-id="95:4371" data-name="Link">
+              </Link>
+              <Link href="/crop-rotation" className="figma-175" data-node-id="95:4371" data-name="Link">
                 <div className="figma-178" data-node-id="95:4372" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer17} />
+                  <img alt="" className="figma-7" src={imgContainer17}/>
                 </div>
                 <div className="figma-177" data-node-id="95:4374">
-                  <p className="figma-19">Crop Rotation</p>
+                  <p className="figma-19"><T text="Crop Rotation"/></p>
                 </div>
-              </a>
-              <a href="/information-check" className="figma-175" data-node-id="95:4375" data-name="Link">
+              </Link>
+              <Link href="/information-check" className="figma-175" data-node-id="95:4375" data-name="Link">
                 <div className="figma-179" data-node-id="95:4376" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer18} />
+                  <img alt="" className="figma-7" src={imgContainer18}/>
                 </div>
                 <div className="figma-177" data-node-id="95:4378">
-                  <p className="figma-19">Information Check</p>
+                  <p className="figma-19"><T text="Information Check"/></p>
                 </div>
-              </a>
-              <a href="/feedback" className="figma-175" data-node-id="95:4379" data-name="Link">
+              </Link>
+              <Link href="/feedback" className="figma-175" data-node-id="95:4379" data-name="Link">
                 <div className="figma-180" data-node-id="95:4380" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer19} />
+                  <img alt="" className="figma-7" src={imgContainer19}/>
                 </div>
                 <div className="figma-177" data-node-id="95:4382">
-                  <p className="figma-19">Feedback</p>
+                  <p className="figma-19"><T text="Feedback"/></p>
                 </div>
-              </a>
-              <a href="/" className="figma-175" data-node-id="95:4383" data-name="Link">
+              </Link>
+              <Link href="/" className="figma-175" data-node-id="95:4383" data-name="Link">
                 <div className="figma-180" data-node-id="95:4384" data-name="Container">
-                  <img alt="" className="figma-7" src={imgContainer20} />
+                  <img alt="" className="figma-7" src={imgContainer20}/>
                 </div>
                 <div className="figma-177" data-node-id="95:4386">
-                  <p className="figma-19">Public Portal</p>
+                  <p className="figma-19"><T text="Public Portal"/></p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -743,7 +745,7 @@ export default function DashboardHarvestV() {
                 <div className="figma-185" data-node-id="95:4389" data-name="Background">
                   <div className="figma-52">
                     <div className="figma-122" data-node-id="95:4390" data-name="Container">
-                      <img alt="" className="figma-7" src={imgContainer13} />
+                      <img alt="" className="figma-7" src={imgContainer13}/>
                     </div>
                   </div>
                 </div>
@@ -751,12 +753,12 @@ export default function DashboardHarvestV() {
                   <div className="figma-128">
                     <div className="figma-186" data-node-id="95:4393" data-name="Container">
                       <div className="figma-170" data-node-id="95:4394">
-                        <p className="figma-36">Abdur Rashid</p>
+                        <p className="figma-36"><T text="Abdur Rashid"/></p>
                       </div>
                     </div>
                     <div className="figma-186" data-node-id="95:4395" data-name="Container">
                       <div className="figma-187" data-node-id="95:4396">
-                        <p className="figma-15">+880 1712-849201</p>
+                        <p className="figma-15"><T text="+880 1712-849201"/></p>
                       </div>
                     </div>
                   </div>
@@ -767,15 +769,15 @@ export default function DashboardHarvestV() {
               <div className="figma-188">
                 <div className="figma-120" data-node-id="95:4398" data-name="Container">
                   <div className="figma-26" data-node-id="95:4399" data-name="Container">
-                    <img alt="" className="figma-7" src={imgContainer21} />
+                    <img alt="" className="figma-7" src={imgContainer21}/>
                   </div>
                   <div className="figma-96" data-node-id="95:4401">
-                    <p className="figma-15">16123 Helpline</p>
+                    <p className="figma-15"><T text="16123 Helpline"/></p>
                   </div>
                 </div>
                 <div className="figma-189" data-node-id="95:4402" data-name="Background+Border">
                   <div className="figma-96" data-node-id="95:4403">
-                    <p className="figma-15">BARI/BRRI</p>
+                    <p className="figma-15"><T text="BARI/BRRI"/></p>
                   </div>
                 </div>
               </div>
@@ -783,6 +785,5 @@ export default function DashboardHarvestV() {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
 }

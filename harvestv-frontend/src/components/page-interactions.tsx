@@ -1,12 +1,14 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/lib/language';
 
 export default function PageInteractions({page,children}:{page:string;children:ReactNode}) {
+ const {language,setLanguage,t}=useLanguage();
  const root=useRef<HTMLDivElement>(null);const router=useRouter();const [message,setMessage]=useState('');const [reports,setReports]=useState<string[]>([]);
  useEffect(()=>{try {const saved=JSON.parse(localStorage.getItem('harvestv-field-profile')||'{}');root.current?.querySelectorAll<HTMLInputElement>('input[name]').forEach(input=>{if(saved[input.name])input.value=saved[input.name];});setReports(JSON.parse(localStorage.getItem('harvestv-field-reports')||'[]'));}catch{}},[]);
  function save(key:string,value:unknown){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{setMessage('Could not save. Allow browser storage and try again.');return false;}}
- function click(event:MouseEvent<HTMLDivElement>){const target=(event.target as HTMLElement).closest<HTMLElement>('button,[data-name="View Sources"],[data-name="View sources"]');if(!target)return;const label=(target.textContent||'').replace(/\s+/g,' ').trim();const id=target.dataset.nodeId;
+ function click(event:MouseEvent<HTMLDivElement>){const target=(event.target as HTMLElement).closest<HTMLElement>('button,[data-name="View Sources"],[data-name="View sources"]');if(!target)return;const label=(target.dataset.action??target.textContent??'').replace(/\s+/g,' ').trim();const id=target.dataset.nodeId;
   if(/^(Change field|\+ Add new farm|\+ Add your farm|Change Plot Context|Register New Field)$/.test(label)){router.push('/my-farm');return;}
   if(/Plan next crop|View full plan/.test(label)){router.push('/crop-rotation');return;}
   if(/Save Farm/.test(label)){const values:Record<string,string>={};root.current?.querySelectorAll<HTMLInputElement>('input[name]').forEach(e=>values[e.name]=e.value);if(save('harvestv-field-profile',values)){const existing=JSON.parse(localStorage.getItem('harvestv-farm')||'{}');save('harvestv-farm',{...existing,name:existing.name||'Shonar Bangla Agro',location:values.division||'Mymensingh',area:existing.area||'1.5',soil:existing.soil||0,crop:existing.crop||0,water:existing.water||0});setMessage('Farm saved on this device.');}return;}
@@ -20,7 +22,7 @@ export default function PageInteractions({page,children}:{page:string;children:R
   if(/Manual entry/.test(label)){root.current?.querySelector<HTMLInputElement>('input[name="division"]')?.focus();return;}
   if(/Submit for Fast/.test(label)){router.push('/feedback');return;}
   if(label==='Cadastral Export'){const values=Array.from(root.current?.querySelectorAll<HTMLInputElement>('input[name]')||[]).map(e=>`${e.name}: ${e.value}`).join('\n');const url=URL.createObjectURL(new Blob([values],{type:'text/plain'}));const a=document.createElement('a');a.href=url;a.download='harvestv-field-profile.txt';a.click();URL.revokeObjectURL(url);return;}
-  if(label==='EN'||label==='বাংলা'){setMessage(label==='EN'?'English selected.':'এই নতুন পাতাগুলোর সম্পূর্ণ বাংলা অনুবাদ এখনো যুক্ত হয়নি।');return;}
+  if(label==='EN'||label==='বাংলা'){setLanguage(label==='EN'?'en':'bn');setMessage('');return;}
   if(/Log Field Action/.test(label)){setMessage('Field action logged on this device.');save('harvestv-last-field-action',new Date().toISOString());return;}
   if(/Fertilizer Schedule/.test(label)){setMessage('Example schedule: top-dress in 4 days. Confirm the amount and timing with your local agricultural officer.');return;}
   if(/Change Crop|Add Crop/.test(label)){setMessage('Choose a crop: Rice, Mustard, Mungbean, or Jute.');return;}
@@ -28,10 +30,10 @@ export default function PageInteractions({page,children}:{page:string;children:R
   setMessage('This feature is a frontend preview. No request has been sent.');
  }
  return <div ref={root} className={`figma-page page-${page}`} onClick={click}>
-  <div className="mobile-page-nav"><a href="/">HarvestV</a><select aria-label="Go to page" value={'/'+page} onChange={e=>router.push(e.target.value)}><option value="/">Home</option><option value="/dashboard">Dashboard</option><option value="/my-farm">My Farm</option><option value="/crop-rotation">Crop Rotation</option><option value="/information-check">Information Check</option><option value="/feedback">Feedback</option></select></div>
+  <div className="mobile-page-nav"><a href="/">HarvestV</a><select aria-label={t('Go to page')} value={'/'+page} onChange={e=>router.push(e.target.value)}>{[['/','Home'],['/dashboard','Dashboard'],['/my-farm','My Farm'],['/crop-rotation','Crop Rotation'],['/information-check','Information Check'],['/feedback','Feedback']].map(([url,label])=><option key={url} value={url}>{t(label)}</option>)}</select><div className="page-language-switch" role="group" aria-label="Language / ভাষা"><button data-action="EN" aria-pressed={language==='en'} lang="en">EN</button><button data-action="বাংলা" aria-pressed={language==='bn'} lang="bn">বাংলা</button></div></div>
   {children}
-  {page==='feedback'&&reports.length>0&&<section className="local-reports"><h2>Reports saved on this device</h2>{reports.map((report,i)=><article key={i}><strong>Saved locally · awaiting submission</strong><p>{report}</p></article>)}</section>}
-  <div className="prototype-label">Frontend preview · sample farm data and example advice</div>
-  {message&&<div className="page-status" role="status"><p>{message}</p><button aria-label="Dismiss message" onClick={()=>setMessage('')}>×</button></div>}
+  {page==='feedback'&&reports.length>0&&<section className="local-reports"><h2>{t('Reports saved on this device')}</h2>{reports.map((report,i)=><article key={i}><strong>{t('Saved locally · awaiting submission')}</strong><p>{report}</p></article>)}</section>}
+  <div className="prototype-label">{t('Frontend preview · sample farm data and example advice')}</div>
+  {message&&<div className="page-status" role="status"><p>{t(message)}</p><button aria-label={t('Dismiss message')} onClick={event=>{event.stopPropagation();setMessage('');}}>×</button></div>}
  </div>;
 }

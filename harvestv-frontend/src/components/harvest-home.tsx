@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { content, type Language } from "@/lib/content";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/lib/language";
 
 type Panel = "farm" | "rotation" | "catalog" | "feedback" | "dashboard" | "profile" | "privacy" | "terms" | "compliance";
 type Farm = { name: string; location: string; area: string; soil: number; crop: number; water: number };
@@ -30,7 +31,7 @@ function persist(key: string, value: unknown) {
 
 export default function HarvestHome() {
   const router = useRouter();
-  const [language, setLanguage] = useState<Language>("en");
+  const {language, setLanguage} = useLanguage();
   const [farm, setFarm] = useState<Farm>(initialFarm);
   const [draftFarm, setDraftFarm] = useState<Farm>(initialFarm);
   const [savedPlan, setSavedPlan] = useState(false);
