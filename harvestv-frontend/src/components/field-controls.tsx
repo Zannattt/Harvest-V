@@ -1,0 +1,4 @@
+"use client";
+import { useState } from 'react';
+export function PhotoUpload(){const [name,setName]=useState('');return <label className="photo-upload">Add photo (Optional)<input type="file" accept="image/jpeg,image/png" onChange={e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>10*1024*1024){setName('Please choose a photo under 10MB.');e.target.value='';return;}setName(f.name);}}/>{name&&<span>{name}</span>}</label>;}
+export function SoilTests(){return <details className="soil-tests"><summary>Add soil test values <span>(Optional)</span></summary><div><label>Soil pH<input name="ph" type="number" min="0" max="14" step="0.1" placeholder="e.g. 6.5"/></label><label>Organic matter (%)<input name="organicMatter" type="number" min="0" max="100" step="0.1"/></label><label>Nitrogen (mg/kg)<input name="nitrogen" type="number" min="0" step="0.1"/></label></div></details>;}
