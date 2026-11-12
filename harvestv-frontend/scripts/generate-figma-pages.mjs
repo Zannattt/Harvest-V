@@ -47,6 +47,16 @@ for(const page of pages){let code=page.code;const prefix=code.match(/const asset
  }
  if(page.route==='feedback')code=replaceNode(code,'115:781',()=>'<PhotoUpload />');
  code='import {FarmLocation,FarmDetails} from "@/components/farm-location";\nimport {FarmContextBar,ActiveFarmLabel,CropStatus,FarmConditions,WeatherDashboard,ClimateHistory} from "@/components/live-dashboard";\n'+code;
+ if(page.route==='crop-rotation'){
+ code='import RotationPlanner from "@/components/rotation-planner";\n'+code;
+ code=replaceNode(code,'126:993',()=>'<ActiveFarmLabel kind="name" />');
+ code=replaceNode(code,'117:7247',()=>'<ActiveFarmLabel kind="name" />');
+ code=replaceNode(code,'126:1001',()=>'<RotationPlanner />');
+ }
+ if(page.route==='information-check'){
+ code='import InformationChecker from "@/components/information-checker";\n'+code;
+ code=replaceNode(code,'95:5079',()=>'<InformationChecker />');
+ }
  if(page.route==='my-farm'){
  code=replaceNode(code,'95:4472',()=>'<FarmLocation />');
  code=replaceNode(code,'95:4498',()=>'<FarmDetails section="crops" />');
@@ -67,8 +77,14 @@ for(const page of pages){let code=page.code;const prefix=code.match(/const asset
  code=code.replace(/<p([^>]*)>(No farm selected|Plot 4 Active \(1\.5 Bigha\)|Mymensingh Horticultural Sub-Region|1\.5 Bigha • Clay Loam)<\/p>/g,(_,attributes,label)=>`<p${attributes}><ActiveFarmLabel kind="${label.startsWith('1.5')?'details':label.startsWith('Mymensingh Horticultural')?'region':'name'}" /></p>`);
  }
  if(page.route==='feedback'){
+ code=replaceNode(code,'115:773',()=>'<ActiveFarmLabel kind="name" />');
  code=code.replace('Your Previous Reports (2)','Example previous reports (2)').replace('Vetted agronomist response guaranteed under Agro Data Charter','Feedback is saved on the local server. Expert replies are not connected.').replace('Assigned to Trishal extension office (Estimated response: within 24h)','Example status — no expert review is scheduled.');
+ code=code.replace('Fast Agronomic Review','Feedback status').replace('All field reports are reviewed directly by Upazila Agricultural Officers','Reports are saved for the farmer. No agricultural officer review service is connected.').replace('(DAE) and BARI research agronomists.','Call 16123 or contact the local agriculture office when expert help is needed.').replace('REVIEWED BY EXPERT','EXAMPLE RESPONSE · NOT CONNECTED').replace('Dr. M. K. Anam (BARI Pulses):','Example agronomist response:').replace(/<T text="Verified"\/>/g,'<T text="Example"/>');
  }
+ if(page.route==='feedback'||page.route==='crop-rotation'){
+ for(const [label,hash] of [['Crop Advisory Terms','terms'],['Privacy & Field Data Rights','privacy'],['Soil Health Guidelines','soil']])code=code.replace(new RegExp(`<p([^>]*)><T text="${label}"\\/><\\/p>`,'g'),`<Link href="/policies#${hash}"$1><T text="${label}"/></Link>`);
+ }
+ code=code.replaceAll('Research Partners','Reference Institutions').replaceAll('RESEARCH PARTNERS','REFERENCE INSTITUTIONS').replaceAll('Field agronomy advisory calibrated with national seed standards.','General agricultural references; no institutional partnership is implied.').replaceAll('Verified Agronomic Database','Reference Library · Local Validation Required').replaceAll('DAE REGIONAL LIAISON 2024–25','LOCAL FARM FEEDBACK');
  for(const id of ['95:5210','95:5240','95:5273'])code=replaceNode(code,id,(whole,open,body)=>open.replace('<div','<button type="button" data-sources="true"')+body+'</button>');
  code=code.replace(/className="([^"]*)"/g,(_,v)=>v==='photo-upload'||v==='soil-tests'?`className="${v}"`:`className="${classFor(v)}"`);
  fs.mkdirSync('src/components/figma',{recursive:true});fs.writeFileSync(`src/components/figma/${page.route}.tsx`,localizeFigma(code,page.route+'.tsx'));

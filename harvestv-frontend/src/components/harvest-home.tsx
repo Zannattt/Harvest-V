@@ -172,7 +172,7 @@ export default function HarvestHome() {
         <div className="container"><div className="example-panel">
           <div className="example-header"><div><span className="eyebrow"><span className="tag-dot" />{t.demo}</span><h3>{t.model}</h3></div><span className="zone-badge"><Icon name="zone" />{t.zone}</span></div>
           <CropSequence language={language} />
-          <div className="three-column example-stats">{["78%", "-30%", "৳ 84,500"].map((value, index) => <div className="example-stat" key={value}><span className="stat-icon"><Icon name={(["statNitrogen", "statCost", "statReturn"] as const)[index]} /></span><div><strong>{value}</strong><span>{t.stats[index]}</span></div></div>)}</div>
+          <div className="three-column example-stats">{(language==='en'?["Review", "Plan", "Confirm"]:["পর্যালোচনা", "পরিকল্পনা", "যাচাই"]).map((value, index) => <div className="example-stat" key={value}><span className="stat-icon"><Icon name={(["statNitrogen", "statCost", "statReturn"] as const)[index]} /></span><div><strong>{value}</strong><span>{t.stats[index]}</span></div></div>)}</div>
         </div></div>
       </section>
 

@@ -21,57 +21,57 @@ const imgContainer = `${assetPathPrefix}/37a44.svg`;
 const imgContainer1 = `${assetPathPrefix}/59e02.svg`;
 export default function Feedback() {
     const {t,language}=useLanguage();
-    return (<div className="figma-283" data-node-id="115:719" style={{ backgroundImage: "linear-gradient(90deg, rgb(250, 248, 242) 0%, rgb(250, 248, 242) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feedback">
-      <div className="figma-482" data-node-id="115:720" data-name="MainContent">
-        <div className="figma-205" data-node-id="115:721" data-name="Section - Title & Breadcrumb Block">
-          <div className="figma-218" data-node-id="115:722" data-name="Container">
-            <div className="figma-483" data-node-id="115:723" data-name="Background"/>
-            <div className="figma-300" data-node-id="115:724" data-name="Margin">
-              <div className="figma-484" data-node-id="115:725">
+    return (<div className="figma-189" data-node-id="115:719" style={{ backgroundImage: "linear-gradient(90deg, rgb(250, 248, 242) 0%, rgb(250, 248, 242) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feedback">
+      <div className="figma-258" data-node-id="115:720" data-name="MainContent">
+        <div className="figma-259" data-node-id="115:721" data-name="Section - Title & Breadcrumb Block">
+          <div className="figma-209" data-node-id="115:722" data-name="Container">
+            <div className="figma-260" data-node-id="115:723" data-name="Background"/>
+            <div className="figma-211" data-node-id="115:724" data-name="Margin">
+              <div className="figma-261" data-node-id="115:725">
                 <p className="figma-59"><T text="COMMUNITY & AGRONOMY DESK"/></p>
               </div>
             </div>
-            <div className="figma-300" data-node-id="115:726" data-name="Margin">
-              <div className="figma-485" data-node-id="115:727">
+            <div className="figma-211" data-node-id="115:726" data-name="Margin">
+              <div className="figma-262" data-node-id="115:727">
                 <p className="figma-59"><T text="/"/></p>
               </div>
             </div>
-            <div className="figma-300" data-node-id="115:728" data-name="Margin">
-              <div className="figma-486" data-node-id="115:729">
-                <p className="figma-59"><T text="DAE REGIONAL LIAISON 2024–25"/></p>
+            <div className="figma-211" data-node-id="115:728" data-name="Margin">
+              <div className="figma-263" data-node-id="115:729">
+                <p className="figma-59"><T text="LOCAL FARM FEEDBACK"/></p>
               </div>
             </div>
           </div>
-          <div className="figma-487" data-node-id="115:730" data-name="Heading 1">
-            <div className="figma-488" data-node-id="115:731">
-              <p className="figma-489"><T text="Farm Feedback & Advisory Desk"/></p>
+          <div className="figma-264" data-node-id="115:730" data-name="Heading 1">
+            <div className="figma-265" data-node-id="115:731">
+              <p className="figma-266"><T text="Farm Feedback & Advisory Desk"/></p>
             </div>
           </div>
           <div className="figma-32" data-node-id="115:732" data-name="Container">
-            <div className="figma-490" data-node-id="115:733">
+            <div className="figma-267" data-node-id="115:733">
               <p className="figma-84"><T text="Share field issues, report crop results, or ask local agronomists for guidance."/></p>
             </div>
           </div>
         </div>
-        <div className="figma-491" data-node-id="115:734" data-name="Main Two-Column Layout">
-          <div className="figma-492" data-node-id="115:735" data-name="Section - LeftFormColumn">
-            <div className="figma-493" data-node-id="115:736" data-name="Primary Form Box">
+        <div className="figma-268" data-node-id="115:734" data-name="Main Two-Column Layout">
+          <div className="figma-269" data-node-id="115:735" data-name="Section - LeftFormColumn">
+            <div className="figma-270" data-node-id="115:736" data-name="Primary Form Box">
               <div className="figma-24" data-node-id="115:737" data-name="Container">
-                <div className="figma-358">
+                <div className="figma-271">
                   <div className="figma-32" data-node-id="115:738" data-name="Heading 2">
-                    <div className="figma-494" data-node-id="115:739">
+                    <div className="figma-272" data-node-id="115:739">
                       <p className="figma-84"><T text="Step 1: What are you reporting?"/></p>
                     </div>
                   </div>
-                  <div className="figma-495" data-node-id="115:740" data-name="Container">
-                    <button type="button" data-action={"Crop or Pest Issue"} className="figma-496" data-node-id="115:741" data-name="Button">
-                      <div className="figma-497" data-node-id="115:742" data-name="SVG:margin">
-                        <div className="figma-498">
-                          <div className="figma-499" data-node-id="115:743" data-name="SVG">
-                            <div className="figma-500" data-node-id="115:744" data-name="SVG">
-                              <div className="figma-501" data-node-id="115:745" data-name="Vector">
-                                <div className="figma-502">
-                                  <img alt="" className="figma-503" src={imgVector}/>
+                  <div className="figma-273" data-node-id="115:740" data-name="Container">
+                    <button type="button" data-action={"Crop or Pest Issue"} className="figma-274" data-node-id="115:741" data-name="Button">
+                      <div className="figma-275" data-node-id="115:742" data-name="SVG:margin">
+                        <div className="figma-276">
+                          <div className="figma-277" data-node-id="115:743" data-name="SVG">
+                            <div className="figma-278" data-node-id="115:744" data-name="SVG">
+                              <div className="figma-279" data-node-id="115:745" data-name="Vector">
+                                <div className="figma-280">
+                                  <img alt="" className="figma-281" src={imgVector}/>
                                 </div>
                               </div>
                             </div>
@@ -80,20 +80,20 @@ export default function Feedback() {
                       </div>
                       <div className="figma-38" data-node-id="115:746" data-name="Container">
                         <div className="figma-139">
-                          <div className="figma-504" data-node-id="115:747">
-                            <p className="figma-232"><T text="Crop or Pest Issue"/></p>
+                          <div className="figma-282" data-node-id="115:747">
+                            <p className="figma-283"><T text="Crop or Pest Issue"/></p>
                           </div>
                         </div>
                       </div>
                     </button>
-                    <button type="button" data-action={"Rotation Plan Feedback"} className="figma-505" data-node-id="115:748" data-name="Button">
-                      <div className="figma-497" data-node-id="115:749" data-name="SVG:margin">
-                        <div className="figma-498">
-                          <div className="figma-499" data-node-id="115:750" data-name="SVG">
-                            <div className="figma-500" data-node-id="115:751" data-name="SVG">
-                              <div className="figma-506" data-node-id="115:752" data-name="Vector">
-                                <div className="figma-507">
-                                  <img alt="" className="figma-503" src={imgVector1}/>
+                    <button type="button" data-action={"Rotation Plan Feedback"} className="figma-284" data-node-id="115:748" data-name="Button">
+                      <div className="figma-275" data-node-id="115:749" data-name="SVG:margin">
+                        <div className="figma-276">
+                          <div className="figma-277" data-node-id="115:750" data-name="SVG">
+                            <div className="figma-278" data-node-id="115:751" data-name="SVG">
+                              <div className="figma-285" data-node-id="115:752" data-name="Vector">
+                                <div className="figma-286">
+                                  <img alt="" className="figma-281" src={imgVector1}/>
                                 </div>
                               </div>
                             </div>
@@ -102,21 +102,21 @@ export default function Feedback() {
                       </div>
                       <div className="figma-38" data-node-id="115:753" data-name="Container">
                         <div className="figma-139">
-                          <div className="figma-508" data-node-id="115:754">
-                            <p className="figma-509"><T text="Rotation Plan"/></p>
-                            <p className="figma-232"><T text="Feedback"/></p>
+                          <div className="figma-287" data-node-id="115:754">
+                            <p className="figma-288"><T text="Rotation Plan"/></p>
+                            <p className="figma-283"><T text="Feedback"/></p>
                           </div>
                         </div>
                       </div>
                     </button>
-                    <button type="button" data-action={"General Question"} className="figma-510" data-node-id="115:755" data-name="Button">
-                      <div className="figma-497" data-node-id="115:756" data-name="SVG:margin">
-                        <div className="figma-498">
-                          <div className="figma-499" data-node-id="115:757" data-name="SVG">
-                            <div className="figma-500" data-node-id="115:758" data-name="SVG">
-                              <div className="figma-511" data-node-id="115:759" data-name="Vector">
-                                <div className="figma-512">
-                                  <img alt="" className="figma-503" src={imgVector2}/>
+                    <button type="button" data-action={"General Question"} className="figma-289" data-node-id="115:755" data-name="Button">
+                      <div className="figma-275" data-node-id="115:756" data-name="SVG:margin">
+                        <div className="figma-276">
+                          <div className="figma-277" data-node-id="115:757" data-name="SVG">
+                            <div className="figma-278" data-node-id="115:758" data-name="SVG">
+                              <div className="figma-290" data-node-id="115:759" data-name="Vector">
+                                <div className="figma-291">
+                                  <img alt="" className="figma-281" src={imgVector2}/>
                                 </div>
                               </div>
                             </div>
@@ -125,8 +125,8 @@ export default function Feedback() {
                       </div>
                       <div className="figma-38" data-node-id="115:760" data-name="Container">
                         <div className="figma-139">
-                          <div className="figma-508" data-node-id="115:761">
-                            <p className="figma-232"><T text="General Question"/></p>
+                          <div className="figma-287" data-node-id="115:761">
+                            <p className="figma-283"><T text="General Question"/></p>
                           </div>
                         </div>
                       </div>
@@ -135,95 +135,93 @@ export default function Feedback() {
                 </div>
               </div>
               <div className="figma-24" data-node-id="115:762" data-name="Container">
-                <div className="figma-513">
+                <div className="figma-292">
                   <div className="figma-5" data-node-id="115:763" data-name="Container">
                     <div className="figma-13" data-node-id="115:764" data-name="Label">
-                      <div className="figma-514" data-node-id="115:765">
+                      <div className="figma-293" data-node-id="115:765">
                         <p className="figma-84"><T text="Step 2: Select your plot"/></p>
                       </div>
                     </div>
-                    <div className="figma-515" data-node-id="115:766" data-name="Overlay+Border">
-                      <div className="figma-516" data-node-id="115:767">
+                    <div className="figma-294" data-node-id="115:766" data-name="Overlay+Border">
+                      <div className="figma-295" data-node-id="115:767">
                         <p className="figma-59"><T text="Auto-detected"/></p>
                       </div>
                     </div>
                   </div>
-                  <div className="figma-517" data-node-id="115:768" data-name="Options">
-                    <div className="figma-518" data-node-id="115:769" data-name="image clip">
-                      <div className="figma-519">
-                        <div className="figma-520" data-node-id="115:770" data-name="image">
+                  <div className="figma-296" data-node-id="115:768" data-name="Options">
+                    <div className="figma-297" data-node-id="115:769" data-name="image clip">
+                      <div className="figma-298">
+                        <div className="figma-299" data-node-id="115:770" data-name="image">
                           <img alt="" className="figma-17" src={imgImage}/>
                         </div>
                       </div>
                     </div>
                     <div className="figma-97" data-node-id="115:772" data-name="Container">
                       <div className="figma-25">
-                        <div className="figma-521" data-node-id="115:773">
-                          <p className="figma-84"><T text="Shonar Bangla Agro — Plot 4 (Alluvial Loam, 1.40 Acres)"/></p>
-                        </div>
+                        <ActiveFarmLabel kind="name"/>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="figma-24" data-node-id="115:774" data-name="Container">
-                <div className="figma-522">
+                <div className="figma-300">
                   <div className="figma-32" data-node-id="115:775" data-name="Label">
-                    <div className="figma-494" data-node-id="115:776">
+                    <div className="figma-272" data-node-id="115:776">
                       <p className="figma-84"><T text="Step 3: Your observation or question"/></p>
                     </div>
                   </div>
-                  <textarea name="observation" aria-label={t("observation")} placeholder={t("e.g. Yellow leaves on Boro rice after cold spell, or seeds did not sprout\u2026")} className="figma-523" data-node-id="115:777" data-name="Textarea"></textarea>
+                  <textarea name="observation" aria-label={t("observation")} placeholder={t("e.g. Yellow leaves on Boro rice after cold spell, or seeds did not sprout\u2026")} className="figma-301" data-node-id="115:777" data-name="Textarea"></textarea>
                 </div>
               </div>
               <div className="figma-24" data-node-id="115:780" data-name="Container">
-                <div className="figma-524">
+                <div className="figma-302">
                   <PhotoUpload />
                   <div className="figma-13" data-node-id="115:787" data-name="Container">
-                    <div className="figma-516" data-node-id="115:788">
+                    <div className="figma-295" data-node-id="115:788">
                       <p className="figma-59"><T text="Max 10MB (JPEG, PNG)"/></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <button type="button" data-action={"▷ Submit Feedback"} className="figma-525" data-node-id="115:789" data-name="Button">
-                <div className="figma-526">
+              <button type="button" data-action={"▷ Submit Feedback"} className="figma-303" data-node-id="115:789" data-name="Button">
+                <div className="figma-304">
                   <div className="figma-19" data-node-id="115:790" data-name="Container">
-                    <div className="figma-527" data-node-id="115:791">
+                    <div className="figma-305" data-node-id="115:791">
                       <p className="figma-84"><T text="▷"/></p>
                     </div>
                   </div>
                   <div className="figma-19" data-node-id="115:792" data-name="Container">
-                    <div className="figma-528" data-node-id="115:793">
+                    <div className="figma-306" data-node-id="115:793">
                       <p className="figma-84"><T text="Submit Feedback"/></p>
                     </div>
                   </div>
                 </div>
               </button>
               <div className="figma-24" data-node-id="115:794" data-name="Container">
-                <div className="figma-529">
-                  <div className="figma-287" data-node-id="115:795" data-name="SVG">
+                <div className="figma-307">
+                  <div className="figma-193" data-node-id="115:795" data-name="SVG">
                     <img alt="" className="figma-17" src={imgSvg1}/>
                   </div>
                   <div className="figma-13" data-node-id="115:797" data-name="Container">
-                    <div className="figma-530" data-node-id="115:798">
+                    <div className="figma-308" data-node-id="115:798">
                       <p className="figma-59"><T text="Feedback is saved on the local server. Expert replies are not connected."/></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="figma-531" data-node-id="115:799" data-name="Emergency Pest Hotline Banner">
+            <div className="figma-309" data-node-id="115:799" data-name="Emergency Pest Hotline Banner">
               <div className="figma-38" data-node-id="115:800" data-name="Container">
                 <div className="figma-150">
-                  <div className="figma-287" data-node-id="115:801" data-name="SVG">
+                  <div className="figma-193" data-node-id="115:801" data-name="SVG">
                     <img alt="" className="figma-17" src={imgSvg2}/>
                   </div>
                   <div className="figma-13" data-node-id="115:803" data-name="Container">
-                    <div className="figma-532" data-node-id="115:804">
+                    <div className="figma-310" data-node-id="115:804">
                       <p>
                         <span className="figma-15"><T text="Emergency pest outbreak? Call Extension Hotline "/></span>
-                        <span className="figma-533"><T text="16123"/></span>
+                        <span className="figma-311"><T text="16123"/></span>
                         <span className="figma-15"><T text="."/></span>
                       </p>
                     </div>
@@ -232,194 +230,194 @@ export default function Feedback() {
               </div>
               <div className="figma-38" data-node-id="115:805" data-name="Container">
                 <div className="figma-25">
-                  <div className="figma-534" data-node-id="115:806">
+                  <div className="figma-312" data-node-id="115:806">
                     <p className="figma-59"><T text="TOLL-FREE"/></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="figma-535" data-node-id="115:807" data-name="Section - RightReportsColumn">
-            <div className="figma-536" data-node-id="115:808" data-name="Container">
+          <div className="figma-313" data-node-id="115:807" data-name="Section - RightReportsColumn">
+            <div className="figma-314" data-node-id="115:808" data-name="Container">
               <div className="figma-13" data-node-id="115:809" data-name="Container">
                 <div className="figma-32" data-node-id="115:810" data-name="Container">
-                  <div className="figma-537" data-node-id="115:811">
+                  <div className="figma-315" data-node-id="115:811">
                     <p className="figma-59"><T text="CASE ARCHIVE"/></p>
                   </div>
                 </div>
                 <div className="figma-32" data-node-id="115:812" data-name="Heading 2">
-                  <div className="figma-538" data-node-id="115:813">
+                  <div className="figma-316" data-node-id="115:813">
                     <p className="figma-31"><T text="Example previous reports (2)"/></p>
                   </div>
                 </div>
               </div>
-              <div className="figma-539" data-node-id="115:814" data-name="Background+Border">
-                <div className="figma-540" data-node-id="115:815">
+              <div className="figma-317" data-node-id="115:814" data-name="Background+Border">
+                <div className="figma-318" data-node-id="115:815">
                   <p className="figma-59"><T text="Verified"/></p>
                 </div>
               </div>
             </div>
-            <div className="figma-541" data-node-id="115:816" data-name="Article">
+            <div className="figma-319" data-node-id="115:816" data-name="Article">
               <div className="figma-24" data-node-id="115:817" data-name="Container">
-                <div className="figma-326">
-                  <div className="figma-286" data-node-id="115:818" data-name="Container">
+                <div className="figma-320">
+                  <div className="figma-192" data-node-id="115:818" data-name="Container">
                     <div className="figma-13" data-node-id="115:819" data-name="Container">
-                      <div className="figma-542" data-node-id="115:820">
+                      <div className="figma-321" data-node-id="115:820">
                         <p className="figma-15"><T text="12 Feb 2025"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:821" data-name="Margin">
-                      <div className="figma-543" data-node-id="115:822">
+                    <div className="figma-211" data-node-id="115:821" data-name="Margin">
+                      <div className="figma-322" data-node-id="115:822">
                         <p className="figma-59"><T text="•"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:823" data-name="Margin">
-                      <div className="figma-544" data-node-id="115:824">
+                    <div className="figma-211" data-node-id="115:823" data-name="Margin">
+                      <div className="figma-323" data-node-id="115:824">
                         <p className="figma-15"><T text="#HV-8902"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:825" data-name="Margin">
-                      <div className="figma-543" data-node-id="115:826">
+                    <div className="figma-211" data-node-id="115:825" data-name="Margin">
+                      <div className="figma-322" data-node-id="115:826">
                         <p className="figma-59"><T text="•"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:827" data-name="Margin">
-                      <div className="figma-545" data-node-id="115:828">
+                    <div className="figma-211" data-node-id="115:827" data-name="Margin">
+                      <div className="figma-324" data-node-id="115:828">
                         <p className="figma-15"><T text="Plot 4"/></p>
                       </div>
                     </div>
                   </div>
-                  <div className="figma-546" data-node-id="115:829" data-name="Background">
-                    <div className="figma-547" data-node-id="115:830">
-                      <p className="figma-59"><T text="REVIEWED BY EXPERT"/></p>
+                  <div className="figma-325" data-node-id="115:829" data-name="Background">
+                    <div className="figma-326" data-node-id="115:830">
+                      <p className="figma-59"><T text="EXAMPLE RESPONSE · NOT CONNECTED"/></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="figma-24" data-node-id="115:831" data-name="Container">
-                <div className="figma-548">
+                <div className="figma-327">
                   <div className="figma-32" data-node-id="115:832" data-name="Heading 3">
-                    <div className="figma-494" data-node-id="115:833">
+                    <div className="figma-272" data-node-id="115:833">
                       <p className="figma-84"><T text="Mungbean root nodulation check"/></p>
                     </div>
                   </div>
-                  <div className="figma-549" data-node-id="115:834" data-name="Container">
-                    <div className="figma-550" data-node-id="115:835">
-                      <p className="figma-551"><T text="Observed lower pink nodule formation than expected at Day 22"/></p>
-                      <p className="figma-552"><T text="post-sowing."/></p>
+                  <div className="figma-328" data-node-id="115:834" data-name="Container">
+                    <div className="figma-329" data-node-id="115:835">
+                      <p className="figma-330"><T text="Observed lower pink nodule formation than expected at Day 22"/></p>
+                      <p className="figma-331"><T text="post-sowing."/></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="figma-553" data-node-id="115:836" data-name="Background+Border">
-                <div className="figma-554">
+              <div className="figma-332" data-node-id="115:836" data-name="Background+Border">
+                <div className="figma-333">
                   <div className="figma-24" data-node-id="115:837" data-name="Container">
                     <div className="figma-150">
-                      <div className="figma-287" data-node-id="115:838" data-name="SVG">
+                      <div className="figma-193" data-node-id="115:838" data-name="SVG">
                         <img alt="" className="figma-17" src={imgSvg3}/>
                       </div>
                       <div className="figma-13" data-node-id="115:840" data-name="Container">
-                        <div className="figma-542" data-node-id="115:841">
-                          <p className="figma-15"><T text="Dr. M. K. Anam (BARI Pulses):"/></p>
+                        <div className="figma-321" data-node-id="115:841">
+                          <p className="figma-15"><T text="Example agronomist response:"/></p>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="figma-24" data-node-id="115:842" data-name="Container">
-                    <div className="figma-555">
-                      <div className="figma-556" data-node-id="115:843">
-                        <p className="figma-551"><T text="“Root nodulation is normal for Day 22 under current soil"/></p>
-                        <p className="figma-552"><T text="temperatures. Resume light irrigation as scheduled.”"/></p>
+                    <div className="figma-334">
+                      <div className="figma-335" data-node-id="115:843">
+                        <p className="figma-330"><T text="“Root nodulation is normal for Day 22 under current soil"/></p>
+                        <p className="figma-331"><T text="temperatures. Resume light irrigation as scheduled.”"/></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="figma-541" data-node-id="115:844" data-name="Article">
+            <div className="figma-319" data-node-id="115:844" data-name="Article">
               <div className="figma-24" data-node-id="115:845" data-name="Container">
-                <div className="figma-326">
-                  <div className="figma-286" data-node-id="115:846" data-name="Container">
+                <div className="figma-320">
+                  <div className="figma-192" data-node-id="115:846" data-name="Container">
                     <div className="figma-13" data-node-id="115:847" data-name="Container">
-                      <div className="figma-542" data-node-id="115:848">
+                      <div className="figma-321" data-node-id="115:848">
                         <p className="figma-15"><T text="28 Jan 2025"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:849" data-name="Margin">
-                      <div className="figma-543" data-node-id="115:850">
+                    <div className="figma-211" data-node-id="115:849" data-name="Margin">
+                      <div className="figma-322" data-node-id="115:850">
                         <p className="figma-59"><T text="•"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:851" data-name="Margin">
-                      <div className="figma-544" data-node-id="115:852">
+                    <div className="figma-211" data-node-id="115:851" data-name="Margin">
+                      <div className="figma-323" data-node-id="115:852">
                         <p className="figma-15"><T text="#HV-8741"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:853" data-name="Margin">
-                      <div className="figma-543" data-node-id="115:854">
+                    <div className="figma-211" data-node-id="115:853" data-name="Margin">
+                      <div className="figma-322" data-node-id="115:854">
                         <p className="figma-59"><T text="•"/></p>
                       </div>
                     </div>
-                    <div className="figma-300" data-node-id="115:855" data-name="Margin">
-                      <div className="figma-545" data-node-id="115:856">
+                    <div className="figma-211" data-node-id="115:855" data-name="Margin">
+                      <div className="figma-324" data-node-id="115:856">
                         <p className="figma-15"><T text="Plot 4"/></p>
                       </div>
                     </div>
                   </div>
-                  <div className="figma-557" data-node-id="115:857" data-name="Background">
-                    <div className="figma-558" data-node-id="115:858">
+                  <div className="figma-336" data-node-id="115:857" data-name="Background">
+                    <div className="figma-337" data-node-id="115:858">
                       <p className="figma-59"><T text="FEEDBACK RECEIVED"/></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="figma-24" data-node-id="115:859" data-name="Container">
-                <div className="figma-548">
+                <div className="figma-327">
                   <div className="figma-32" data-node-id="115:860" data-name="Heading 3">
-                    <div className="figma-494" data-node-id="115:861">
+                    <div className="figma-272" data-node-id="115:861">
                       <p className="figma-84"><T text="Standing water drainage issue"/></p>
                     </div>
                   </div>
-                  <div className="figma-549" data-node-id="115:862" data-name="Container">
-                    <div className="figma-550" data-node-id="115:863">
-                      <p className="figma-551"><T text="Inflow from north ridge submerged mustard bed roots after"/></p>
-                      <p className="figma-552"><T text="unexpected rainfall."/></p>
+                  <div className="figma-328" data-node-id="115:862" data-name="Container">
+                    <div className="figma-329" data-node-id="115:863">
+                      <p className="figma-330"><T text="Inflow from north ridge submerged mustard bed roots after"/></p>
+                      <p className="figma-331"><T text="unexpected rainfall."/></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="figma-24" data-node-id="115:864" data-name="Container">
-                <div className="figma-559">
-                  <div className="figma-287" data-node-id="115:865" data-name="SVG">
+                <div className="figma-338">
+                  <div className="figma-193" data-node-id="115:865" data-name="SVG">
                     <img alt="" className="figma-17" src={imgSvg4}/>
                   </div>
                   <div className="figma-13" data-node-id="115:868" data-name="Container">
-                    <div className="figma-530" data-node-id="115:869">
+                    <div className="figma-308" data-node-id="115:869">
                       <p className="figma-59"><T text="Example status — no expert review is scheduled."/></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="figma-560" data-node-id="115:870" data-name="Background+Border">
-              <div className="figma-561" data-node-id="115:871" data-name="SVG:margin">
-                <div className="figma-562">
+            <div className="figma-339" data-node-id="115:870" data-name="Background+Border">
+              <div className="figma-340" data-node-id="115:871" data-name="SVG:margin">
+                <div className="figma-341">
                   <div className="figma-132" data-node-id="115:872" data-name="SVG">
                     <img alt="" className="figma-17" src={imgSvg5}/>
                   </div>
                 </div>
               </div>
               <div className="figma-38" data-node-id="115:874" data-name="Container">
-                <div className="figma-381">
+                <div className="figma-342">
                   <div className="figma-32" data-node-id="115:875" data-name="Container">
-                    <div className="figma-542" data-node-id="115:876">
-                      <p className="figma-15"><T text="Fast Agronomic Review"/></p>
+                    <div className="figma-321" data-node-id="115:876">
+                      <p className="figma-15"><T text="Feedback status"/></p>
                     </div>
                   </div>
                   <div className="figma-32" data-node-id="115:877" data-name="Container">
-                    <div className="figma-530" data-node-id="115:878">
-                      <p className="figma-437"><T text="All field reports are reviewed directly by Upazila Agricultural Officers"/></p>
-                      <p className="figma-438"><T text="(DAE) and BARI research agronomists."/></p>
+                    <div className="figma-308" data-node-id="115:878">
+                      <p className="figma-214"><T text="Reports are saved for the farmer. No agricultural officer review service is connected."/></p>
+                      <p className="figma-215"><T text="Call 16123 or contact the local agriculture office when expert help is needed."/></p>
                     </div>
                   </div>
                 </div>
@@ -428,119 +426,119 @@ export default function Feedback() {
           </div>
         </div>
       </div>
-      <div className="figma-563" data-node-id="115:879" data-name="MainFooter:margin">
-        <div className="figma-564" data-node-id="115:880" data-name="MainFooter">
+      <div className="figma-343" data-node-id="115:879" data-name="MainFooter:margin">
+        <div className="figma-344" data-node-id="115:880" data-name="MainFooter">
           <div className="figma-155" data-node-id="115:881" data-name="Container">
-            <div className="figma-565">
-              <div className="figma-566" data-node-id="115:882" data-name="Container">
-                <div className="figma-567" data-node-id="115:883" data-name="Container">
-                  <div className="figma-568" data-node-id="115:884" data-name="Container">
-                    <div className="figma-569" data-node-id="115:885" data-name="Background">
-                      <div className="figma-287" data-node-id="115:886" data-name="SVG">
+            <div className="figma-345">
+              <div className="figma-346" data-node-id="115:882" data-name="Container">
+                <div className="figma-347" data-node-id="115:883" data-name="Container">
+                  <div className="figma-348" data-node-id="115:884" data-name="Container">
+                    <div className="figma-349" data-node-id="115:885" data-name="Background">
+                      <div className="figma-193" data-node-id="115:886" data-name="SVG">
                         <img alt="" className="figma-17" src={imgSvg6}/>
                       </div>
                     </div>
                     <div className="figma-13" data-node-id="115:888" data-name="Container">
-                      <div className="figma-570" data-node-id="115:889">
+                      <div className="figma-350" data-node-id="115:889">
                         <p className="figma-31"><T text="HarvestV"/></p>
                       </div>
                     </div>
                   </div>
-                  <div className="figma-571" data-node-id="115:890" data-name="Container">
-                    <div className="figma-572" data-node-id="115:891">
-                      <p className="figma-437"><T text="Agro-minimal planning and precision crop"/></p>
-                      <p className="figma-438"><T text="rotation for progressive Bangladeshi farmers."/></p>
+                  <div className="figma-351" data-node-id="115:890" data-name="Container">
+                    <div className="figma-352" data-node-id="115:891">
+                      <p className="figma-214"><T text="Agro-minimal planning and precision crop"/></p>
+                      <p className="figma-215"><T text="rotation for progressive Bangladeshi farmers."/></p>
                     </div>
                   </div>
                 </div>
-                <div className="figma-573" data-node-id="115:892" data-name="Container">
+                <div className="figma-353" data-node-id="115:892" data-name="Container">
                   <div className="figma-32" data-node-id="115:893" data-name="Heading 4">
-                    <div className="figma-574" data-node-id="115:894">
+                    <div className="figma-354" data-node-id="115:894">
                       <p className="figma-59"><T text="EMERGENCY & SUPPORT"/></p>
                     </div>
                   </div>
-                  <div className="figma-575" data-node-id="115:895" data-name="Container">
-                    <div className="figma-287" data-node-id="115:896" data-name="SVG">
+                  <div className="figma-355" data-node-id="115:895" data-name="Container">
+                    <div className="figma-193" data-node-id="115:896" data-name="SVG">
                       <img alt="" className="figma-17" src={imgSvg2}/>
                     </div>
                     <div className="figma-13" data-node-id="115:898" data-name="Container">
-                      <div className="figma-514" data-node-id="115:899">
+                      <div className="figma-293" data-node-id="115:899">
                         <p className="figma-84"><T text="16123"/></p>
                       </div>
                     </div>
                   </div>
                   <div className="figma-32" data-node-id="115:900" data-name="Container">
-                    <div className="figma-572" data-node-id="115:901">
-                      <p className="figma-437"><T text="National Agricultural Extension Call Center (Toll"/></p>
-                      <p className="figma-438"><T text="Free)"/></p>
+                    <div className="figma-352" data-node-id="115:901">
+                      <p className="figma-214"><T text="National Agricultural Extension Call Center (Toll"/></p>
+                      <p className="figma-215"><T text="Free)"/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-141" data-node-id="115:902" data-name="Container">
                   <div className="figma-32" data-node-id="115:903" data-name="Heading 4">
-                    <div className="figma-574" data-node-id="115:904">
-                      <p className="figma-59"><T text="RESEARCH PARTNERS"/></p>
+                    <div className="figma-354" data-node-id="115:904">
+                      <p className="figma-59"><T text="REFERENCE INSTITUTIONS"/></p>
                     </div>
                   </div>
                   <div className="figma-32" data-node-id="115:905" data-name="Container">
-                    <div className="figma-576" data-node-id="115:906">
-                      <p className="figma-437"><T text="BARI (Bangladesh Agricultural Research"/></p>
-                      <p className="figma-438"><T text="Institute)"/></p>
+                    <div className="figma-356" data-node-id="115:906">
+                      <p className="figma-214"><T text="BARI (Bangladesh Agricultural Research"/></p>
+                      <p className="figma-215"><T text="Institute)"/></p>
                     </div>
                   </div>
                   <div className="figma-32" data-node-id="115:907" data-name="Container">
-                    <div className="figma-576" data-node-id="115:908">
-                      <p className="figma-438"><T text="BRRI (Bangladesh Rice Research Institute)"/></p>
+                    <div className="figma-356" data-node-id="115:908">
+                      <p className="figma-215"><T text="BRRI (Bangladesh Rice Research Institute)"/></p>
                     </div>
                   </div>
-                  <div className="figma-577" data-node-id="115:909" data-name="Container">
-                    <div className="figma-578" data-node-id="115:910">
-                      <p className="figma-579"><T text="Field agronomy advisory calibrated with national"/></p>
-                      <p className="figma-331"><T text="seed standards."/></p>
+                  <div className="figma-357" data-node-id="115:909" data-name="Container">
+                    <div className="figma-358" data-node-id="115:910">
+                      <p className="figma-359"><T text="Field agronomy advisory calibrated with national"/></p>
+                      <p className="figma-360"><T text="seed standards."/></p>
                     </div>
                   </div>
                 </div>
-                <div className="figma-580" data-node-id="115:911" data-name="Container">
+                <div className="figma-361" data-node-id="115:911" data-name="Container">
                   <div className="figma-32" data-node-id="115:912" data-name="Heading 4">
-                    <div className="figma-574" data-node-id="115:913">
+                    <div className="figma-354" data-node-id="115:913">
                       <p className="figma-59"><T text="AGRONOMIC GOVERNANCE"/></p>
                     </div>
                   </div>
-                  <div className="figma-205" data-node-id="115:914" data-name="List">
+                  <div className="figma-259" data-node-id="115:914" data-name="List">
                     <div className="figma-32" data-node-id="115:915" data-name="Item">
-                      <div className="figma-572" data-node-id="115:916">
+                      <div className="figma-352" data-node-id="115:916">
                         <p className="figma-59"><T text="Crop Advisory Terms"/></p>
                       </div>
                     </div>
                     <div className="figma-32" data-node-id="115:917" data-name="Item">
-                      <div className="figma-572" data-node-id="115:918">
+                      <div className="figma-352" data-node-id="115:918">
                         <p className="figma-59"><T text="Privacy & Field Data Rights"/></p>
                       </div>
                     </div>
                     <div className="figma-32" data-node-id="115:919" data-name="Item">
-                      <div className="figma-572" data-node-id="115:920">
+                      <div className="figma-352" data-node-id="115:920">
                         <p className="figma-59"><T text="Soil Health Guidelines"/></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="figma-581" data-node-id="115:921" data-name="HorizontalBorder">
+              <div className="figma-362" data-node-id="115:921" data-name="HorizontalBorder">
                 <div className="figma-38" data-node-id="115:922" data-name="Container">
                   <div className="figma-25">
-                    <div className="figma-582" data-node-id="115:923">
+                    <div className="figma-363" data-node-id="115:923">
                       <p className="figma-59"><T text="© 2024 HarvestV Agronomy Systems. Developed under agro-minimal stewardship."/></p>
                     </div>
                   </div>
                 </div>
                 <div className="figma-38" data-node-id="115:924" data-name="Container">
-                  <div className="figma-463">
-                    <div className="figma-287" data-node-id="115:925" data-name="SVG">
+                  <div className="figma-239">
+                    <div className="figma-193" data-node-id="115:925" data-name="SVG">
                       <img alt="" className="figma-17" src={imgSvg7}/>
                     </div>
                     <div className="figma-13" data-node-id="115:927" data-name="Container">
-                      <div className="figma-540" data-node-id="115:928">
-                        <p className="figma-59"><T text="Verified Agronomic Database"/></p>
+                      <div className="figma-318" data-node-id="115:928">
+                        <p className="figma-59"><T text="Reference Library · Local Validation Required"/></p>
                       </div>
                     </div>
                   </div>
@@ -566,7 +564,7 @@ export default function Feedback() {
                   </div>
                 </div>
                 <div className="figma-32" data-node-id="117:7143" data-name="Container">
-                  <div className="figma-583" data-node-id="117:7144">
+                  <div className="figma-364" data-node-id="117:7144">
                     <p className="figma-8"><T text="CROP PLANNING & AGRONOMY"/></p>
                   </div>
                 </div>

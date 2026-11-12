@@ -277,7 +277,7 @@ export default function MyFarmHarvestV() {
               <div className="figma-97" data-node-id="95:4640" data-name="Container">
                 <div className="figma-168">
                   <div className="figma-163" data-node-id="95:4641">
-                    <p className="figma-15"><T text="Research Partners"/></p>
+                    <p className="figma-15"><T text="Reference Institutions"/></p>
                   </div>
                   <div className="figma-169" data-node-id="95:4642" data-name="Container">
                     <div className="figma-32" data-node-id="95:4643" data-name="Container">
@@ -336,7 +336,7 @@ export default function MyFarmHarvestV() {
                   <img alt="" className="figma-17" src={imgContainer15}/>
                 </div>
                 <div className="figma-39" data-node-id="95:4664">
-                  <p className="figma-8"><T text="Verified Agronomic Database"/></p>
+                  <p className="figma-8"><T text="Reference Library · Local Validation Required"/></p>
                 </div>
               </div>
             </div>

@@ -7,6 +7,11 @@ export function translate(text:string,language:Language){
  if(language==='en')return text;
  const coordinates=text.match(/^Device location: (.+)\. Confirm your farm location separately\.$/);
  if(coordinates)return `ডিভাইসের অবস্থান: ${coordinates[1]}। খামারের অবস্থান আলাদাভাবে নিশ্চিত করুন।`;
+ if(text.startsWith('Mungbean adds a legume after '))return 'মুগডাল ডালজাতীয় ফসল যোগ করে এবং আগের ফসলের তুলনায় বৈচিত্র্য বাড়ায়।';
+ if(text.startsWith('Soil: '))return 'সংরক্ষিত মাটি ও পিএইচ তথ্য দেখে বপনের সময়, বীজ, রোগ, সংরক্ষণ ও স্থানীয় ঝুঁকি কৃষি কর্মকর্তার সঙ্গে নিশ্চিত করুন।';
+ if(text.startsWith('Uses the saved '))return 'সংরক্ষিত পানির উৎস ব্যবহার করে এবং পরপর তিন মৌসুম একই ধরনের দানাদার ফসল এড়ায়।';
+ if(text.startsWith('Changes crop families after '))return 'বর্তমান ফসলের পর ভিন্ন ফসল পরিবার যোগ করে।';
+ if(text.startsWith('District: '))return 'সংরক্ষিত জেলার বাজার, বন্যার ঝুঁকি এবং ধানের জাতের সময়সীমা স্থানীয়ভাবে যাচাই করুন।';
  const key=text.trim();const translated=bangla[key];
  if(translated)return text.replace(key,translated);
  if(/^[\d\s.,%°–−+→~:()/-]+$/.test(key))return text.replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[Number(d)]);
