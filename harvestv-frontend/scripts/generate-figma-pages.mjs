@@ -31,7 +31,7 @@ for(const page of pages){let code=page.code;const prefix=code.match(/const asset
  // Make the prototype controls semantic and keyboard accessible, retaining all their design layers.
  const controls=[...code.matchAll(/data-node-id="([^"]+)" data-name="(Button|Link)"/g)].map(m=>({id:m[1],type:m[2]}));
  for(const {id,type} of controls)code=replaceNode(code,id,(whole,open,body)=>{const texts=[...body.matchAll(/<p[^>]*>(.*?)<\/p>/gs)].map(m=>m[1].replace(/\{`|`\}/g,'').trim());const label=texts.join(' ');const route=routeFor[label];if(type==='Link'&&route)return open.replace('<div','<a href="'+route+'"')+body+'</a>';if(type==='Link'&&/16123|Hotline|SAAO/.test(label))return open.replace('<div','<a href="tel:16123"')+body+'</a>';return open.replace('<div',`<button type="button" data-action={${JSON.stringify(label)}}`)+body+'</button>';});
- const fields=page.route==='my-farm'?[['95:4454','division','Mymensingh'],['95:4460','upazila','Trishal'],['95:4466','plot','Balipara No. 4, Plot #14']]:page.route==='information-check'?[['95:5135','source','']]:[];
+ const fields=page.route==='information-check'?[['95:5135','source','']]:[];
  for(const [id,name,value]of fields)code=replaceNode(code,id,(whole,open)=>open.replace('<div','<input name="'+name+'" aria-label="'+name+'" defaultValue="'+value+'"').replace(/>$/,' />'));
  for(const [id,name,placeholder]of [['95:5121','advice','What farming advice would you like to check?'],['115:777','observation','e.g. Yellow leaves on Boro rice after cold spell, or seeds did not sprout…'],['126:1257','note','Optional note: seed availability, tube well water level…']])code=replaceNode(code,id,(whole,open)=>open.replace('<div',`<textarea name="${name}" aria-label="${name}" placeholder="${placeholder}"`)+ '</textarea>');
  code=code.replace(/<a href="(\/(?:dashboard|my-farm|crop-rotation|information-check|feedback)?)"([^>]*)>([\s\S]*?)<\/a>/g,'<Link href="$1"$2>$3</Link>');
@@ -39,10 +39,36 @@ for(const page of pages){let code=page.code;const prefix=code.match(/const asset
  code=code.replace(/data-action=\{"EN"\}/g,'data-action={"EN"} aria-pressed={language === "en"} lang="en"').replace(/data-action=\{"বাংলা"\}/g,'data-action={"বাংলা"} aria-pressed={language === "bn"} lang="bn"');
  code='import { PhotoUpload, SoilTests } from "@/components/field-controls";\n'+code;
  if(page.route==='my-farm'){
+ code='import FarmAddressField from "@/components/farm-address-field";\n'+code;
+ for(const [id,field]of [['95:4454','division'],['95:4460','district'],['95:4466','plot']])code=replaceNode(code,id,()=>`<FarmAddressField field="${field}" />`);
+ code=code.replace('Administrative Division','Division').replace('Upazila / Sub-district','District').replace('Mauza / CS Plot Number','Mauza / CS Plot Number (optional)');
  for(const [id,label]of [['95:4588','Deep Tube Well'],['95:4593','Shallow Tube Well'],['95:4597','Canal / Pond'],['95:4601','Rainfed']])code=replaceNode(code,id,(whole,open,body)=>open.replace('<div',`<label aria-label="${label}"`)+`<input type="radio" name="water" value="${label}" defaultChecked={${id==='95:4588'}} style={{position:'absolute',inset:0,opacity:0,cursor:'pointer'}} />`+body+'</label>');
  code=replaceNode(code,'95:4570',()=>'<SoilTests />');
  }
  if(page.route==='feedback')code=replaceNode(code,'115:781',()=>'<PhotoUpload />');
+ code='import {FarmLocation,FarmDetails} from "@/components/farm-location";\nimport {FarmContextBar,ActiveFarmLabel,CropStatus,FarmConditions,WeatherDashboard,ClimateHistory} from "@/components/live-dashboard";\n'+code;
+ if(page.route==='my-farm'){
+ code=replaceNode(code,'95:4472',()=>'<FarmLocation />');
+ code=replaceNode(code,'95:4498',()=>'<FarmDetails section="crops" />');
+ code=replaceNode(code,'95:4548',()=>'<FarmDetails section="soil" />');
+ code=replaceNode(code,'95:4576',()=>'<FarmDetails section="water" />');
+ code=code.replace('Autosaved locally','Farm details are saved when you select Save Farm.');
+ code=code.replace('Plot Map Preview','Farm location map');
+ }
+ if(page.route==='dashboard'){
+ code=replaceNode(code,'95:4095',()=>'<FarmContextBar />');
+ code=replaceNode(code,'95:4122',()=>'<CropStatus />');
+ code=replaceNode(code,'95:4175',()=>'<FarmConditions />');
+ code=replaceNode(code,'95:4198',()=>'<><WeatherDashboard /><ClimateHistory /></>');
+ code=code.replace('AGRONOMIC STEWARDSHIP','EXAMPLE ROTATION · NOT A LIVE RECOMMENDATION');
+ code=code.replace('Active Crop Rotation Sequence (1-Year Cycle)','Example Crop Rotation Sequence');
+ code=code.replace('BMD Weather & BARI Agronomic Model • Updated today at 07:30 BST','Example data');
+ code=code.replace('Mymensingh • Plot 4','No farm selected');
+ code=code.replace(/<p([^>]*)>(No farm selected|Plot 4 Active \(1\.5 Bigha\)|Mymensingh Horticultural Sub-Region|1\.5 Bigha • Clay Loam)<\/p>/g,(_,attributes,label)=>`<p${attributes}><ActiveFarmLabel kind="${label.startsWith('1.5')?'details':label.startsWith('Mymensingh Horticultural')?'region':'name'}" /></p>`);
+ }
+ if(page.route==='feedback'){
+ code=code.replace('Your Previous Reports (2)','Example previous reports (2)').replace('Vetted agronomist response guaranteed under Agro Data Charter','Feedback is saved on the local server. Expert replies are not connected.').replace('Assigned to Trishal extension office (Estimated response: within 24h)','Example status — no expert review is scheduled.');
+ }
  for(const id of ['95:5210','95:5240','95:5273'])code=replaceNode(code,id,(whole,open,body)=>open.replace('<div','<button type="button" data-sources="true"')+body+'</button>');
  code=code.replace(/className="([^"]*)"/g,(_,v)=>v==='photo-upload'||v==='soil-tests'?`className="${v}"`:`className="${classFor(v)}"`);
  fs.mkdirSync('src/components/figma',{recursive:true});fs.writeFileSync(`src/components/figma/${page.route}.tsx`,localizeFigma(code,page.route+'.tsx'));

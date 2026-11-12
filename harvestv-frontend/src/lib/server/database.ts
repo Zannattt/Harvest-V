@@ -1,0 +1,9 @@
+import { DatabaseSync } from 'node:sqlite';
+import { mkdirSync } from 'node:fs';
+import path from 'node:path';
+import { randomBytes } from 'node:crypto';
+import { cookies } from 'next/headers';
+let database:DatabaseSync|undefined;
+export function db(){if(!database){const directory=process.env.HARVESTV_DATA_DIR||path.resolve(process.cwd(),'..','.harvestv-data');mkdirSync(directory,{recursive:true});database=new DatabaseSync(path.join(directory,'harvestv.sqlite'));database.exec('PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS farms(owner TEXT PRIMARY KEY, payload TEXT NOT NULL); CREATE TABLE IF NOT EXISTS feedback(id TEXT PRIMARY KEY, owner TEXT NOT NULL, message TEXT NOT NULL, created_at TEXT NOT NULL);');}return database;}
+export async function owner(){const jar=await cookies();let token=jar.get('harvestv-session')?.value;if(!token||!/^[a-f0-9]{64}$/.test(token)){token=randomBytes(32).toString('hex');jar.set('harvestv-session',token,{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',path:'/',maxAge:60*60*24*365});}return token;}
+export function validWrite(request:Request){const origin=request.headers.get('origin');let sameOrigin=!origin;try{if(origin){const source=new URL(origin);const target=new URL(request.url);sameOrigin=origin===target.origin||(source.host===request.headers.get('host')&&source.protocol===target.protocol);}}catch{return false;}return Boolean(sameOrigin&&request.headers.get('content-type')?.includes('application/json'));}

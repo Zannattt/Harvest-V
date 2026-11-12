@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "rea
 import { content, type Language } from "@/lib/content";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/lib/language";
+import {useFarm} from "@/lib/farm-context";
 
 type Panel = "farm" | "rotation" | "catalog" | "feedback" | "dashboard" | "profile" | "privacy" | "terms" | "compliance";
 type Farm = { name: string; location: string; area: string; soil: number; crop: number; water: number };
@@ -32,6 +33,7 @@ function persist(key: string, value: unknown) {
 export default function HarvestHome() {
   const router = useRouter();
   const {language, setLanguage} = useLanguage();
+  const {farm:confirmedFarm}=useFarm();
   const [farm, setFarm] = useState<Farm>(initialFarm);
   const [draftFarm, setDraftFarm] = useState<Farm>(initialFarm);
   const [savedPlan, setSavedPlan] = useState(false);
@@ -106,7 +108,7 @@ export default function HarvestHome() {
       <div className="header-inner">
         <div className="header-brand">
           <a href="#" className="brand" aria-label="HarvestV home"><span className="logo-tile"><Icon name="logo" /></span><span>HarvestV</span></a>
-          <button className="farm-location" onClick={() => openPanel("farm")} aria-label={`${t.farm}: ${farm.location}`}><Icon name="pin" /><span>{farm.location} • {farm.area} {language === "en" ? "Bigha" : "বিঘা"}</span></button>
+          <button className="farm-location" onClick={() => openPanel("farm")} aria-label={t.farm}><Icon name="pin" /><span>{confirmedFarm?.name||(language==='en'?'No farm selected':'খামার বাছাই করা হয়নি')}</span></button>
         </div>
         <nav className="desktop-nav nav-pill" aria-label={language === "en" ? "Main navigation" : "মূল মেনু"}>
           <a href="/dashboard" className="nav-item">{language === "en" ? "Dashboard" : "ড্যাশবোর্ড"}</a>
