@@ -4,6 +4,7 @@ import { FarmLocation, FarmDetails } from "@/components/farm-location";
 import { FarmContextBar, ActiveFarmLabel, CropStatus, FarmConditions, WeatherDashboard, ClimateHistory } from "@/components/live-dashboard";
 import { PhotoUpload, SoilTests } from "@/components/field-controls";
 import Link from "next/link";
+import { FarmerProfileText } from "@/components/farmer-profile";
 const assetPathPrefix = "/figma/feedback";
 const imgVector = `${assetPathPrefix}/b57fe.svg`;
 const imgVector1 = `${assetPathPrefix}/6e50b.svg`;
@@ -624,12 +625,12 @@ export default function Feedback() {
                   <div className="figma-25">
                     <div className="figma-186" data-node-id="117:7166" data-name="Container">
                       <div className="figma-187" data-node-id="117:7167">
-                        <p className="figma-59"><T text="Abdur Rashid"/></p>
+                        <p className="figma-59"><FarmerProfileText /></p>
                       </div>
                     </div>
                     <div className="figma-186" data-node-id="117:7168" data-name="Container">
                       <div className="figma-188" data-node-id="117:7169">
-                        <p className="figma-8"><T text="+880 1712-849201"/></p>
+                        <p className="figma-8"><FarmerProfileText field="phone" /></p>
                       </div>
                     </div>
                   </div>

@@ -5,6 +5,7 @@ import { FarmLocation, FarmDetails } from "@/components/farm-location";
 import { FarmContextBar, ActiveFarmLabel, CropStatus, FarmConditions, WeatherDashboard, ClimateHistory } from "@/components/live-dashboard";
 import { PhotoUpload, SoilTests } from "@/components/field-controls";
 import Link from "next/link";
+import { FarmerProfileText } from "@/components/farmer-profile";
 const assetPathPrefix = "/figma/crop-rotation";
 const imgSvg = `${assetPathPrefix}/e653f.svg`;
 const imgSvg1 = `${assetPathPrefix}/93e39.svg`;
@@ -278,7 +279,7 @@ export default function CropRotation() {
               <div className="figma-252" data-node-id="117:7266" data-name="Background+Shadow">
                 <div className="figma-253">
                   <div className="figma-254" data-node-id="117:7267">
-                    <p className="figma-59"><T text="AR"/></p>
+                    <p className="figma-59"><FarmerProfileText field="initials" /></p>
                   </div>
                 </div>
               </div>
@@ -286,7 +287,7 @@ export default function CropRotation() {
                 <div className="figma-25">
                   <div className="figma-32" data-node-id="117:7269" data-name="Container">
                     <div className="figma-255" data-node-id="117:7270">
-                      <p className="figma-59"><T text="Abdur Rashid"/></p>
+                      <p className="figma-59"><FarmerProfileText /></p>
                     </div>
                   </div>
                   <div className="figma-111" data-node-id="117:7271" data-name="Margin">

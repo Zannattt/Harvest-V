@@ -35,7 +35,7 @@ for(const page of pages){let code=page.code;const prefix=code.match(/const asset
  for(const [id,name,value]of fields)code=replaceNode(code,id,(whole,open)=>open.replace('<div','<input name="'+name+'" aria-label="'+name+'" defaultValue="'+value+'"').replace(/>$/,' />'));
  for(const [id,name,placeholder]of [['95:5121','advice','What farming advice would you like to check?'],['115:777','observation','e.g. Yellow leaves on Boro rice after cold spell, or seeds did not sprout…'],['126:1257','note','Optional note: seed availability, tube well water level…']])code=replaceNode(code,id,(whole,open)=>open.replace('<div',`<textarea name="${name}" aria-label="${name}" placeholder="${placeholder}"`)+ '</textarea>');
  code=code.replace(/<a href="(\/(?:dashboard|my-farm|crop-rotation|information-check|feedback)?)"([^>]*)>([\s\S]*?)<\/a>/g,'<Link href="$1"$2>$3</Link>');
- code='import Link from "next/link";\n'+code;
+ code='import Link from "next/link";\nimport {FarmerProfileText} from "@/components/farmer-profile";\n'+code;
  code=code.replace(/data-action=\{"EN"\}/g,'data-action={"EN"} aria-pressed={language === "en"} lang="en"').replace(/data-action=\{"বাংলা"\}/g,'data-action={"বাংলা"} aria-pressed={language === "bn"} lang="bn"');
  code='import { PhotoUpload, SoilTests } from "@/components/field-controls";\n'+code;
  if(page.route==='my-farm'){
@@ -87,7 +87,7 @@ for(const page of pages){let code=page.code;const prefix=code.match(/const asset
  code=code.replaceAll('Research Partners','Reference Institutions').replaceAll('RESEARCH PARTNERS','REFERENCE INSTITUTIONS').replaceAll('Field agronomy advisory calibrated with national seed standards.','General agricultural references; no institutional partnership is implied.').replaceAll('Verified Agronomic Database','Reference Library · Local Validation Required').replaceAll('DAE REGIONAL LIAISON 2024–25','LOCAL FARM FEEDBACK');
  for(const id of ['95:5210','95:5240','95:5273'])code=replaceNode(code,id,(whole,open,body)=>open.replace('<div','<button type="button" data-sources="true"')+body+'</button>');
  code=code.replace(/className="([^"]*)"/g,(_,v)=>v==='photo-upload'||v==='soil-tests'?`className="${v}"`:`className="${classFor(v)}"`);
- fs.mkdirSync('src/components/figma',{recursive:true});fs.writeFileSync(`src/components/figma/${page.route}.tsx`,localizeFigma(code,page.route+'.tsx'));
+ fs.mkdirSync('src/components/figma',{recursive:true});fs.writeFileSync(`src/components/figma/${page.route}.tsx`,localizeFigma(code,page.route+'.tsx').replaceAll('<T text="Abdur Rashid"/>','<FarmerProfileText />').replaceAll('<T text="+880 1712-849201"/>','<FarmerProfileText field="phone" />').replaceAll('<T text="AR"/>','<FarmerProfileText field="initials" />'));
  fs.mkdirSync(`src/app/${page.route}`,{recursive:true});fs.writeFileSync(`src/app/${page.route}/page.tsx`,`import Design from '@/components/figma/${page.route}';\nimport PageInteractions from '@/components/page-interactions';\nexport default function Page(){return <PageInteractions page="${page.route}"><Design /></PageInteractions>;}\n`);
 }
 let css=[...classes.values()].map(x=>'.figma-page .'+x.name+'{'+x.css+'}').join('\n');

@@ -5,11 +5,12 @@ import { content, type Language } from "@/lib/content";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/lib/language";
 import {useFarm} from "@/lib/farm-context";
+import {useProfile} from "@/lib/profile-context";
 
 type Panel = "farm" | "rotation" | "catalog" | "feedback" | "dashboard" | "profile" | "privacy" | "terms" | "compliance";
 type Farm = { name: string; location: string; area: string; soil: number; crop: number; water: number };
 type Feedback = { id: string; message: string; rating: "helpful" | "notHelpful"; date: string };
-const initialFarm: Farm = { name: "Abdur Rashid’s Farm", location: "Mymensingh", area: "1.5", soil: 0, crop: 0, water: 0 };
+const initialFarm: Farm = { name: "My Farm", location: "Mymensingh", area: "1.5", soil: 0, crop: 0, water: 0 };
 const iconFiles = {
   soil: "1add3.svg", weather: "bf08c.svg", guidance: "224a3.svg", stepFarm: "98d32.svg", stepRotate: "42417.svg", stepSave: "17d20.svg",
   zone: "a682c.svg", statNitrogen: "b2691.svg", statCost: "409ca.svg", statReturn: "4a474.svg", chevron: "d1196.svg", dashboard: "17e04.svg", call: "44c51.svg",
@@ -34,6 +35,7 @@ export default function HarvestHome() {
   const router = useRouter();
   const {language, setLanguage} = useLanguage();
   const {farm:confirmedFarm}=useFarm();
+  const {profile}=useProfile();
   const [farm, setFarm] = useState<Farm>(initialFarm);
   const [draftFarm, setDraftFarm] = useState<Farm>(initialFarm);
   const [savedPlan, setSavedPlan] = useState(false);
@@ -68,7 +70,7 @@ export default function HarvestHome() {
     return () => { document.body.style.overflow = ""; };
   }, [panel]);
 
-  function openPanel(next: Panel) { const routes: Partial<Record<Panel, string>> = {farm:"/my-farm",rotation:"/crop-rotation",feedback:"/feedback",dashboard:"/dashboard"}; if(routes[next]){router.push(routes[next]!);return;} setNotice(""); setMobileMenu(false); setPanel(next); }
+  function openPanel(next: Panel) { const routes: Partial<Record<Panel, string>> = {farm:"/my-farm",rotation:"/crop-rotation",feedback:"/feedback",dashboard:"/dashboard",profile:"/profile"}; if(routes[next]){router.push(routes[next]!);return;} setNotice(""); setMobileMenu(false); setPanel(next); }
   function switchLanguage(next: Language) { setLanguage(next); persist("harvestv-language", next); setNotice(""); }
 
   function saveFarm(event: FormEvent<HTMLFormElement>) {
@@ -121,12 +123,12 @@ export default function HarvestHome() {
             <button onClick={() => switchLanguage("bn")} aria-pressed={language === "bn"} lang="bn">বাংলা</button>
           </div>
           <button className="profile-button" onClick={() => openPanel("profile")} aria-label={t.profile}>
-            <span className="profile-info"><strong>{language === "en" ? "Abdur Rashid" : "আব্দুর রশিদ"}</strong><span>+880 1712-849201</span></span><span className="avatar"><Icon name="user" /></span>
+            <span className="profile-info"><strong>{profile?.name||(language==='bn'?'আপনার প্রোফাইল':'Your profile')}</strong><span>{profile?.phone||(language==='bn'?'প্রোফাইল সম্পাদনা':'Edit profile')}</span></span><span className="avatar"><Icon name="user" /></span>
           </button>
           <button className="mobile-menu-button" aria-label={t.menu} aria-expanded={mobileMenu} aria-controls="mobile-nav" onClick={() => setMobileMenu(!mobileMenu)}><span /><span /><span /></button>
         </div>
       </div>
-      {mobileMenu && <nav id="mobile-nav" className="mobile-nav" aria-label={t.menu}>{navItems.map(([key, label]) => key === "home" ? <a key={key} href="#" onClick={() => setMobileMenu(false)} aria-current="page">{label}</a> : <button key={key} onClick={() => openPanel(key)}>{label}</button>)}</nav>}
+      {mobileMenu && <nav id="mobile-nav" className="mobile-nav" aria-label={t.menu}>{navItems.map(([key, label]) => key === "home" ? <a key={key} href="#" onClick={() => setMobileMenu(false)} aria-current="page">{label}</a> : <button key={key} onClick={() => openPanel(key)}>{label}</button>)}<button onClick={()=>openPanel('profile')}>{language==='bn'?'প্রোফাইল সম্পাদনা':'Edit profile'}</button></nav>}
     </header>
 
     <main id="main">
@@ -207,7 +209,6 @@ export default function HarvestHome() {
         {panel === "dashboard" && <><div className="dashboard-summary"><Tag>{t.farm}</Tag><h3>{farm.name}</h3><p>{farm.location} • {farm.area} {language === "en" ? "Bigha" : "বিঘা"}</p><dl><div><dt>{t.currentCrop}</dt><dd>{t.cropOptions[farm.crop]}</dd></div><div><dt>{t.soil}</dt><dd>{t.soilOptions[farm.soil]}</dd></div><div><dt>{t.water}</dt><dd>{t.waterOptions[farm.water]}</dd></div></dl><button className="button outlined" onClick={() => openPanel("farm")}>{t.editFarm}</button></div><h3 className="saved-plan-heading">{t.savedPlan}</h3>{savedPlan ? <><p className="demo-notice">{t.demoNotice}</p><CropSequence language={language} /><button className="button primary" onClick={downloadPlan}>{t.download}</button></> : <><p className="dialog-intro">{t.noPlan}</p><button className="button primary" onClick={() => openPanel("rotation")}>{t.plan}</button></>}</>}
         {panel === "catalog" && <><label className="search-label">{t.search}<input type="search" placeholder={t.search} value={search} onChange={event => setSearch(event.target.value)} /></label><p className="demo-notice">{t.demoNotice}</p><CropSequence language={language} search={search} /></>}
         {panel === "feedback" && <><p className="dialog-intro">{t.feedbackHelp}</p><form className="feedback-form" onSubmit={saveFeedback}><fieldset><legend>{t.feedback}</legend><label><input type="radio" name="rating" value="helpful" defaultChecked />{t.helpful}</label><label><input type="radio" name="rating" value="notHelpful" />{t.notHelpful}</label></fieldset><label>{t.observation}<textarea name="message" placeholder={t.observationPlaceholder} required minLength={3} maxLength={2000} rows={4} /></label><button className="button primary" type="submit">{t.sendFeedback}</button></form>{feedback.length > 0 && <div className="previous-feedback"><h3>{t.previous}</h3>{feedback.map(item => <article key={item.id}><span>{t[item.rating]} · {new Date(item.date).toLocaleDateString(language === "en" ? "en-GB" : "bn-BD")}</span><p>{item.message}</p></article>)}</div>}</>}
-        {panel === "profile" && <><div className="profile-card"><span className="avatar"><Icon name="user" /></span><div><h3>{language === "en" ? "Abdur Rashid" : "আব্দুর রশিদ"}</h3><p>+880 1712-849201</p></div></div><p className="dialog-intro">{t.profileHelp}</p><button className="button primary" onClick={() => openPanel("farm")}>{t.farm}</button></>}
         {panel === "privacy" && <p className="policy-copy">{t.privacyText}</p>}
         {panel === "terms" && <p className="policy-copy">{t.termsText}</p>}
         {panel === "compliance" && <p className="policy-copy">{t.complianceText}</p>}

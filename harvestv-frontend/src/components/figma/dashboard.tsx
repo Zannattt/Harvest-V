@@ -4,6 +4,7 @@ import { FarmLocation, FarmDetails } from "@/components/farm-location";
 import { FarmContextBar, ActiveFarmLabel, CropStatus, FarmConditions, WeatherDashboard, ClimateHistory } from "@/components/live-dashboard";
 import { PhotoUpload, SoilTests } from "@/components/field-controls";
 import Link from "next/link";
+import { FarmerProfileText } from "@/components/farmer-profile";
 const assetPathPrefix = "/figma/dashboard";
 const imgAb6AXuDwkCg4Ky0E3IVX9KturOjZp6IhwC1OjfZyxQp6T1CRqn8S3Nn3CwXji56He3AZkRtjHjpZz9C8KXIl7HrN093IFwo1DbNroaYui3OGhkDh0V7HzK0Q9G3Axcid0IloY4ISuxnhzLes6EHk8WCibcKLpGd9HQc9Y083TRs47F2Tj7VbM7Gd6LCScCHtRWbMre0L4NPehVGhQCw8VtI9OBaUeYlytsKGmZi = `${assetPathPrefix}/4deae.png`;
 const imgContainer = `${assetPathPrefix}/be492.svg`;
@@ -423,12 +424,12 @@ export default function DashboardHarvestV() {
                   <div className="figma-25">
                     <div className="figma-98" data-node-id="95:4393" data-name="Container">
                       <div className="figma-78" data-node-id="95:4394">
-                        <p className="figma-59"><T text="Abdur Rashid"/></p>
+                        <p className="figma-59"><FarmerProfileText /></p>
                       </div>
                     </div>
                     <div className="figma-98" data-node-id="95:4395" data-name="Container">
                       <div className="figma-99" data-node-id="95:4396">
-                        <p className="figma-8"><T text="+880 1712-849201"/></p>
+                        <p className="figma-8"><FarmerProfileText field="phone" /></p>
                       </div>
                     </div>
                   </div>

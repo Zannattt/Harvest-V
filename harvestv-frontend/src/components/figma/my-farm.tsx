@@ -5,6 +5,7 @@ import { FarmContextBar, ActiveFarmLabel, CropStatus, FarmConditions, WeatherDas
 import FarmAddressField from "@/components/farm-address-field";
 import { PhotoUpload, SoilTests } from "@/components/field-controls";
 import Link from "next/link";
+import { FarmerProfileText } from "@/components/farmer-profile";
 const assetPathPrefix = "/figma/my-farm";
 const imgBackgroundBorderShadow = `${assetPathPrefix}/2ccee.png`;
 const imgContainer = `${assetPathPrefix}/2e66f.svg`;
@@ -414,12 +415,12 @@ export default function MyFarmHarvestV() {
                   <div className="figma-25">
                     <div className="figma-186" data-node-id="95:4697" data-name="Container">
                       <div className="figma-187" data-node-id="95:4698">
-                        <p className="figma-59"><T text="Abdur Rashid"/></p>
+                        <p className="figma-59"><FarmerProfileText /></p>
                       </div>
                     </div>
                     <div className="figma-186" data-node-id="95:4699" data-name="Container">
                       <div className="figma-188" data-node-id="95:4700">
-                        <p className="figma-8"><T text="+880 1712-849201"/></p>
+                        <p className="figma-8"><FarmerProfileText field="phone" /></p>
                       </div>
                     </div>
                   </div>

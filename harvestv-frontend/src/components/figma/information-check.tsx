@@ -5,6 +5,7 @@ import { FarmLocation, FarmDetails } from "@/components/farm-location";
 import { FarmContextBar, ActiveFarmLabel, CropStatus, FarmConditions, WeatherDashboard, ClimateHistory } from "@/components/live-dashboard";
 import { PhotoUpload, SoilTests } from "@/components/field-controls";
 import Link from "next/link";
+import { FarmerProfileText } from "@/components/farmer-profile";
 const assetPathPrefix = "/figma/information-check";
 const imgAb6AXuBie7YKgziRs9L0SztSejkxJRaboVdxDbWwSj5HyaMisyPvTaypQmry5Yeht7KDwZm58Jmp75DoyG0HCwbOswoOmVqg9CQpOzaApFm5QCd6AzGliXLgyU2GbnzVCxTw7I1Gbv7XQjNkajUAn7W0IaEJnnDuDjLDq3LnjL9T4Mgi2Rzyl67OkaRpTmAxxRJqDyX7REomvkPx2WwGwEvGrVvTtNfETfVUy3Z6S8O5G = `${assetPathPrefix}/bbe76.png`;
 const imgAb6AXuBb7S2ZncPtfMke05RRpug87Q8BqTgo1Ur1El33RlugXiE7LyVbpNvRGyecMa82KZuSpxaeLu74EokxKEiC95Q04J3PRnKd322Zu3BbTq7D5OxAm2QwNhGvHEefOAh1ShlecfMa3DFuEy42Aai7Xtpn5OY75Cp1TuQi7Eo8RN5VDhNjM6UyKl6SeNyxrtpZqnHf82K4OjxSAaxXerosLYsox0Pu2Ht3LnDnIfS = `${assetPathPrefix}/e16b8.png`;
@@ -223,12 +224,12 @@ export default function InformationCheckHarvestV() {
                   <div className="figma-25">
                     <div className="figma-186" data-node-id="95:5368" data-name="Container">
                       <div className="figma-187" data-node-id="95:5369">
-                        <p className="figma-59"><T text="Abdur Rashid"/></p>
+                        <p className="figma-59"><FarmerProfileText /></p>
                       </div>
                     </div>
                     <div className="figma-186" data-node-id="95:5370" data-name="Container">
                       <div className="figma-188" data-node-id="95:5371">
-                        <p className="figma-8"><T text="+880 1712-849201"/></p>
+                        <p className="figma-8"><FarmerProfileText field="phone" /></p>
                       </div>
                     </div>
                   </div>
