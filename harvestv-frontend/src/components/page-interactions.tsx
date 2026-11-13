@@ -23,7 +23,7 @@ export default function PageInteractions({page,children}:{page:string;children:R
   if(id==='115:741'||id==='115:748'||id==='115:755'||['Silt Loam','Clay Loam','Sandy Loam','Yes, helpful','Needs adjustment'].includes(label)){target.parentElement?.querySelectorAll('button').forEach(e=>e.setAttribute('aria-pressed','false'));target.setAttribute('aria-pressed','true');return;}
   if(label==='Use my current location'){startTracking();document.getElementById('farm-location')?.scrollIntoView({behavior:'smooth'});return;}
   if(label==='Confirm farm location'){setMessage('Farm location confirmed from your current entries. The displayed map is a sample preview.');return;}
-  if(/Manual entry/.test(label)){document.getElementById('farm-latitude')?.focus();return;}
+  if(/Manual entry/.test(label)){document.getElementById('farm-place-search')?.focus();return;}
   if(/Submit for Fast/.test(label)){router.push('/feedback');return;}
   if(label==='Cadastral Export'){if(!farm){setMessage('Save this field before exporting it.');return;}const lines=[`Farm: ${farm.name}`,`Place: ${farm.label}`,`Latitude: ${farm.latitude}`,`Longitude: ${farm.longitude}`,...Object.entries(farm.details).map(([key,value])=>`${key}: ${value||'—'}`),`Updated: ${farm.updatedAt}`];const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`${farm.name.replace(/[^a-z0-9]+/gi,'-').toLowerCase()||'harvestv'}-field-profile.txt`;a.click();URL.revokeObjectURL(url);setMessage('Complete field profile exported.');return;}
   if(label==='HarvestV'||label.startsWith('HarvestV ')){router.push('/');return;}

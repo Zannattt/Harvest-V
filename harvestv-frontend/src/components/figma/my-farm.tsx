@@ -12,7 +12,7 @@ type SectionProps = { number: number; title: string; description: string; icon: 
 
 function FarmSection({ number, title, description, icon, children }: SectionProps) {
   const { t } = useLanguage();
-  return <section className="my-farm-card" id={title.toLowerCase()}>
+  return <section className={`my-farm-card ${title === "Location" ? "my-farm-location-card" : ""}`} id={title.toLowerCase()}>
     <header className="my-farm-card-header">
       <div className="my-farm-card-heading"><span className="my-farm-step" aria-hidden="true">{number}</span><div><h2>{t(title)}</h2><p>{t(description)}</p></div></div>
       <img src={`${assets}/${icon}`} alt="" />
@@ -52,7 +52,7 @@ export default function MyFarmHarvestV() {
             <label><FieldLabel>{t("District")}</FieldLabel><FarmAddressField field="district" /></label>
             <label><FieldLabel>{t("Mauza / CS Plot Number (optional)")}</FieldLabel><FarmAddressField field="plot" /></label>
           </div>
-          <div className="my-farm-map-block"><FieldLabel>{t("Farm location map")}</FieldLabel><FarmLocation compact /></div>
+          <div className="my-farm-map-block"><FieldLabel>{t("Plot Map Preview")}</FieldLabel><FarmLocation compact /></div>
           <div className="my-farm-note"><img src={`${assets}/8be80.svg`} alt="" /><p>{t("GPS coordinates will not overwrite your manual entries if connection drops.")}</p></div>
         </FarmSection>
 

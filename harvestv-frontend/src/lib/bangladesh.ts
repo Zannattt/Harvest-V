@@ -14,3 +14,18 @@ export const bangladeshDivisions = [
 export function validDistrict(division:string|undefined,district:string|undefined){
  return bangladeshDivisions.some(item=>item.name===division&&item.districts.some(([name])=>name===district));
 }
+
+const aliases:Record<string,string>={chittagong:'chattogram',comilla:'cumilla',jessore:'jashore',bogra:'bogura',barisal:'barishal',netrokona:'netrokona',nawabganj:'chapainawabganj'};
+function administrativeKey(value:string){const key=value.toLowerCase().normalize('NFKD').replace(/[^a-z]/g,'').replace(/(division|district|zila)$/,'');return aliases[key]||key;}
+export function matchBangladeshLocation(place:{name:string;region:string;district?:string}){
+ const division=bangladeshDivisions.find(item=>administrativeKey(place.region)===administrativeKey(item.name));
+ if(!division)return {division:'',district:''};
+ const district=division.districts.find(([name])=>[place.district||'',place.name].some(value=>administrativeKey(value)===administrativeKey(name)));
+ return {division:division.name,district:district?.[0]||''};
+}
+
+export function placeSearchQuery(text:string){
+ const labels=new Map<string,string>([['ত্রিশাল','Trishal'],['বালিপাড়া','Balipara']]);
+ for(const division of bangladeshDivisions){labels.set(division.bn,division.name);for(const [name,bn] of division.districts)labels.set(bn,name);}
+ return text.split(',').map(part=>labels.get(part.trim())||part.trim()).join(', ');
+}

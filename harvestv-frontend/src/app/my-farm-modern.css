@@ -28,9 +28,51 @@
 .my-farm-modern .live-location{gap:13px}
 .my-farm-modern .farm-switcher{padding:12px;border:1px solid #e1deca;border-radius:9px;background:#faf9f5}
 .my-farm-modern .farm-map{height:260px;border:1px solid #d8d5bf;border-radius:9px}
+.my-farm-modern .farm-map-preview{position:relative;min-width:0}
+.my-farm-modern .live-location .farm-map-preview>.button{position:absolute;right:12px;bottom:28px;z-index:500;background:#4b5320;border-color:#4b5320;color:#fff;box-shadow:0 2px 8px #0003}
 .my-farm-modern .location-search input,.my-farm-modern .coordinate-form input,.my-farm-modern .live-two-fields input,.my-farm-modern .farm-switcher select{height:42px;border:1px solid #d8d5bf;border-radius:8px;background:#faf9f5;padding:0 11px;color:#23251c}
+.my-farm-modern .location-search{align-items:center}
+.my-farm-modern .location-search label{min-width:0}
+.my-farm-modern .location-results{max-height:150px;overflow-y:auto;margin:0;padding:4px;border:1px solid #e1deca;border-radius:9px;background:#fff}
+.my-farm-modern .location-results button[aria-pressed="true"]{background:#e9eddf;color:#343c0a}
+.my-farm-modern .farm-location-matches summary{cursor:pointer;color:#4b5320;font:600 12px var(--font-heading)}
+.my-farm-modern .farm-location-matches .location-results{margin-top:8px}
+.my-farm-modern .farm-location-more{border-top:1px solid #e1deca;padding-top:12px}
+.my-farm-modern .farm-location-more summary{cursor:pointer;color:#4b5320;font:600 12px var(--font-heading)}
+.my-farm-modern .farm-location-more .live-two-fields,.my-farm-modern .farm-location-more .coordinate-form{margin-top:15px}
 .my-farm-modern .live-location .button{min-height:42px;padding:9px 14px;border-radius:8px;border:1px solid #d8d5bf;background:#fff;color:#353820;font:600 12px var(--font-heading)}
 .my-farm-modern .live-location>.button{justify-self:start;width:max-content}
+.my-farm-location-card{background:#f3f1ea;border-color:#e3dfd3;box-shadow:none;padding:25px}
+.my-farm-location-card .my-farm-card-header{padding:0 0 16px;background:transparent;border-color:#e4e0d5;align-items:center}
+.my-farm-location-card .my-farm-card-header>img{width:19px;height:19px}
+.my-farm-location-card .my-farm-card-heading{align-items:flex-start;gap:8px}
+.my-farm-location-card .my-farm-step{width:20px;height:20px;border-radius:50%;font-size:11px}
+.my-farm-location-card h2{font-size:20px;line-height:1.15;margin:0 0 4px}
+.my-farm-location-card .my-farm-card-header p{font:400 14px/1.45 var(--font-body);color:#606456}
+.my-farm-location-card .my-farm-card-body{padding:16px 0 0;gap:15px}
+.my-farm-location-card .my-farm-location-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px}
+.my-farm-location-card .my-farm-location-actions .my-farm-button{min-height:41px;border-radius:5px;padding:10px 14px;font-size:12px}
+.my-farm-location-card .my-farm-address-grid{gap:14px}
+.my-farm-location-card .my-farm-address-grid>label{min-width:0}
+.my-farm-location-card .my-farm-field-label{font-size:11px;margin-bottom:5px}
+.my-farm-location-card .farm-address-control{height:38px;background:#faf9f5;border-color:#e6e3d9;border-radius:5px;font-size:12px}
+.my-farm-location-card .my-farm-map-block{gap:4px}
+.my-farm-location-card .live-location{gap:8px}
+.my-farm-location-card .location-search label{font-size:11px;gap:5px}
+.my-farm-location-card .location-search input{height:38px;background:#faf9f5;border-color:#e6e3d9;border-radius:5px}
+.my-farm-location-card .live-location .live-hint{margin:0;font-size:11px;line-height:1.45}
+.my-farm-location-card .farm-map{height:208px;border:1px solid #e3dfd2;border-radius:7px}
+.my-farm-location-card .farm-map-coordinates{position:absolute;top:10px;left:10px;z-index:500;display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:4px;background:rgba(255,255,255,.94);color:#354031;font:600 10px/1.2 var(--font-heading);box-shadow:0 1px 4px #0002;pointer-events:none}
+.my-farm-location-card .farm-map-coordinates::before{content:"";width:6px;height:6px;flex:none;border-radius:50%;background:#4b5320}
+.my-farm-location-card .live-location .farm-map-preview>.button{bottom:12px;right:12px;min-height:30px;max-width:calc(100% - 24px);padding:6px 10px;border:0;border-radius:4px;background:#4b5320;color:#fff;font-size:11px;box-shadow:0 2px 6px #0004}
+.my-farm-location-card .farm-map-preview>.button img{width:13px;height:13px}
+.my-farm-location-card .farm-switcher{padding:8px 10px;background:#f8f7f2;border-radius:5px}
+.my-farm-location-card .farm-switcher summary{cursor:pointer;font:600 11px var(--font-heading);color:#4b5320}
+.my-farm-location-card .farm-switcher label{margin-top:8px}
+.my-farm-location-card .farm-plot-tooltip{border:0;border-radius:4px;background:#303820;color:white;box-shadow:0 1px 5px #0004;font:600 11px var(--font-heading);padding:4px 8px}
+.my-farm-location-card .farm-plot-tooltip.leaflet-tooltip-bottom::before{border-bottom-color:#303820}
+.my-farm-location-card .my-farm-note{padding:8px 10px;border-radius:5px;background:#eae8dc}
+.my-farm-location-card .my-farm-note p{font-size:10px}
 .my-farm-note{display:flex;align-items:flex-start;gap:9px;background:#f4f1e5;border-radius:8px;padding:12px 14px;color:#626351}
 .my-farm-note img{width:15px;height:15px;margin-top:2px}.my-farm-note p{margin:0;font-size:11px;line-height:1.55}
 .my-farm-choice-group,.my-farm-water-grid{border:0;padding:0;margin:0;display:grid;gap:10px}
@@ -54,3 +96,5 @@
 .my-farm-footer p,.my-farm-footer a{display:block;margin:5px 0;color:#686958;font-size:10px;line-height:1.55;text-decoration:none}.my-farm-footer a:hover{text-decoration:underline;color:#4b5320}
 @media(max-width:760px){.my-farm-main{width:min(100% - 28px,896px);padding:28px 0 48px}.my-farm-title-row{align-items:flex-start;flex-direction:column}.my-farm-page-actions,.my-farm-page-actions .my-farm-button{width:100%}.my-farm-address-grid,.my-farm-three-column,.my-farm-two-column,.my-farm-choice-group,.my-farm-water-grid{grid-template-columns:1fr}.my-farm-card-header,.my-farm-card-body{padding:18px}.my-farm-location-actions,.my-farm-location-actions .my-farm-button{width:100%}.my-farm-choice,.my-farm-water-choice{min-height:62px;flex-direction:row}.my-farm-save-bar{align-items:stretch;flex-direction:column}.my-farm-save-actions,.my-farm-save-actions .my-farm-button{width:100%}.my-farm-footer-grid{width:min(100% - 28px,896px);grid-template-columns:1fr 1fr}.my-farm-modern .location-search{display:grid}.my-farm-modern .coordinate-form{grid-template-columns:1fr}.my-farm-modern .live-two-fields{grid-template-columns:1fr}}
 @media(max-width:480px){.my-farm-footer-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.my-farm-location-card{padding:18px}.my-farm-location-card .my-farm-card-header{padding:0 0 14px}.my-farm-location-card .my-farm-card-body{padding:14px 0 0}.my-farm-location-card .my-farm-location-actions{grid-template-columns:minmax(0,1fr) auto}.my-farm-location-card .my-farm-location-actions .my-farm-button{width:auto}.my-farm-location-card .my-farm-address-grid{grid-template-columns:1fr}.my-farm-location-card .farm-map{height:220px}}
+@media(max-width:420px){.my-farm-location-card .my-farm-location-actions{grid-template-columns:1fr 1fr}.my-farm-location-card .my-farm-location-actions .my-farm-button{padding:9px 6px;font-size:10px}.my-farm-location-card .live-location .farm-map-preview>.button{font-size:10px}}
