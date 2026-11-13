@@ -1,0 +1,153 @@
+/* Shared safeguards for the functional pages and the remaining Figma-generated screens. */
+.app-navbar+main#main{padding-top:0}
+.app-navbar+main#main>.hero.section{padding-top:32px}
+.page-crop-rotation .functional-page,
+.page-information-check .functional-page,
+.app-navbar+.functional-page{padding-top:28px}
+.page-feedback [data-node-id="115:720"]{padding-top:24px}
+
+.functional-page h1,
+.policy-page h1,
+.profile-page h1,
+.my-farm-title-row h1,
+.page-feedback [data-name="Heading 1"]>div{
+  font-size:clamp(32px,4vw,40px);
+  line-height:1.18;
+  letter-spacing:-.035em;
+}
+
+.functional-page p,
+.functional-page li,
+.my-farm-modern p{
+  overflow-wrap:anywhere;
+}
+
+.page-feedback>[data-node-id="115:719"],
+.page-crop-rotation>[data-node-id="126:976"]{
+  display:flex;
+  flex-direction:column;
+  min-height:calc(100vh - 74px);
+  height:auto;
+  overflow-x:clip;
+}
+
+.page-feedback [data-node-id="115:720"],
+.page-feedback [data-node-id="115:879"],
+.page-crop-rotation [data-node-id="126:977"],
+.page-crop-rotation [data-node-id="126:1273"]{
+  position:relative;
+  inset:auto;
+  top:auto;
+  left:auto;
+  right:auto;
+}
+
+.page-feedback [data-node-id="115:720"]{
+  flex:1 0 auto;
+  width:100%;
+  margin-inline:auto;
+}
+
+.page-feedback [data-node-id="115:734"]{
+  grid-template-rows:auto;
+  align-items:start;
+  height:auto;
+}
+
+.page-feedback [data-node-id="115:740"]{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  width:100%;
+}
+
+.page-feedback [data-node-id="115:740"]>button{
+  width:100%;
+  min-width:0;
+  padding-inline:16px;
+}
+
+.page-feedback [data-node-id="115:879"],
+.page-crop-rotation [data-node-id="126:1273"]{
+  margin-top:auto;
+  padding-top:32px;
+}
+
+.page-feedback [data-name*="Box"],
+.page-feedback [data-name*="Card"],
+.page-crop-rotation [data-name*="Card"],
+.page-information-check [data-name*="Card"]{
+  min-width:0;
+  max-width:100%;
+}
+
+.page-feedback button,
+.page-crop-rotation button,
+.page-information-check button,
+.my-farm-modern button{
+  line-height:1.35;
+}
+
+/* Keep the archive metadata and status copy inside the feedback cards. */
+.page-feedback [data-node-id="115:734"]>div,
+.page-feedback [data-node-id="115:816"],
+.page-feedback [data-node-id="115:844"],
+.page-feedback [data-node-id="115:870"]{
+  min-width:0;
+  max-width:100%;
+}
+.page-feedback [data-node-id="115:816"] .figma-320,
+.page-feedback [data-node-id="115:844"] .figma-320{
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  gap:8px;
+  min-width:0;
+}
+.page-feedback [data-node-id="115:818"],
+.page-feedback [data-node-id="115:846"]{
+  flex-wrap:wrap;
+  min-width:0;
+}
+.page-feedback [data-node-id="115:829"],
+.page-feedback [data-node-id="115:857"]{
+  max-width:100%;
+}
+.page-feedback [data-node-id="115:830"],
+.page-feedback [data-node-id="115:858"]{
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.page-feedback [data-node-id="115:870"]>[data-node-id="115:874"]{
+  flex:1 1 0;
+  min-width:0;
+}
+.page-feedback [data-node-id="115:878"],
+.page-feedback [data-node-id="115:878"] p{
+  min-width:0;
+  max-width:100%;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+@media(max-width:760px){
+  .app-navbar+main#main>.hero.section{padding-top:24px}
+  .page-crop-rotation .functional-page,
+  .page-information-check .functional-page,
+  .app-navbar+.functional-page{padding-top:24px}
+  .functional-page h1,
+  .policy-page h1,
+  .profile-page h1,
+  .my-farm-title-row h1,
+  .page-feedback [data-name="Heading 1"]>div{
+    font-size:30px;
+    line-height:1.22;
+  }
+  .page-feedback [data-node-id="115:720"]{padding-inline:20px!important}
+  .page-feedback [data-node-id="115:740"]{grid-template-columns:1fr}
+}
+
+@media(max-width:520px){
+  .app-navbar-inner{gap:8px}
+  .app-navbar-actions{gap:5px}
+  .app-navbar-mobile-select select{max-width:126px}
+  .app-navbar-language button{padding-inline:4px}
+}

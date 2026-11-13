@@ -4,8 +4,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "rea
 import { content, type Language } from "@/lib/content";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/lib/language";
-import {useFarm} from "@/lib/farm-context";
-import {useProfile} from "@/lib/profile-context";
+import AppNavbar from "@/components/app-navbar";
 
 type Panel = "farm" | "rotation" | "catalog" | "feedback" | "dashboard" | "profile" | "privacy" | "terms" | "compliance";
 type Farm = { name: string; location: string; area: string; soil: number; crop: number; water: number };
@@ -34,14 +33,11 @@ function persist(key: string, value: unknown) {
 export default function HarvestHome() {
   const router = useRouter();
   const {language, setLanguage} = useLanguage();
-  const {farm:confirmedFarm}=useFarm();
-  const {profile}=useProfile();
   const [farm, setFarm] = useState<Farm>(initialFarm);
   const [draftFarm, setDraftFarm] = useState<Farm>(initialFarm);
   const [savedPlan, setSavedPlan] = useState(false);
   const [feedback, setFeedback] = useState<Feedback[]>([]);
   const [panel, setPanel] = useState<Panel | null>(null);
-  const [mobileMenu, setMobileMenu] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [showSequence, setShowSequence] = useState(false);
   const [search, setSearch] = useState("");
@@ -70,7 +66,7 @@ export default function HarvestHome() {
     return () => { document.body.style.overflow = ""; };
   }, [panel]);
 
-  function openPanel(next: Panel) { const routes: Partial<Record<Panel, string>> = {farm:"/my-farm",rotation:"/crop-rotation",feedback:"/feedback",dashboard:"/dashboard",profile:"/profile"}; if(routes[next]){router.push(routes[next]!);return;} setNotice(""); setMobileMenu(false); setPanel(next); }
+  function openPanel(next: Panel) { const routes: Partial<Record<Panel, string>> = {farm:"/my-farm",rotation:"/crop-rotation",feedback:"/feedback",dashboard:"/dashboard",profile:"/profile"}; if(routes[next]){router.push(routes[next]!);return;} setNotice(""); setPanel(next); }
   function switchLanguage(next: Language) { setLanguage(next); persist("harvestv-language", next); setNotice(""); }
 
   function saveFarm(event: FormEvent<HTMLFormElement>) {
@@ -102,40 +98,14 @@ export default function HarvestHome() {
   }
 
   const panelTitle = panel ? ({ farm: t.farm, rotation: t.rotation, catalog: t.catalog, feedback: t.feedback, dashboard: t.dashboard, profile: t.profile, privacy: t.policies[0], terms: t.policies[1], compliance: t.policies[2] }[panel]) : "";
-  const navItems = [ ["home", t.home], ["farm", t.farm], ["rotation", t.rotation], ["catalog", t.catalog], ["feedback", t.feedback] ] as const;
-
   return <>
     <a href="#main" className="skip-link">{language === "en" ? "Skip to content" : "মূল বিষয়বস্তুতে যান"}</a>
-    <header className="site-header">
-      <div className="header-inner">
-        <div className="header-brand">
-          <a href="#" className="brand" aria-label="HarvestV home"><span className="logo-tile"><Icon name="logo" /></span><span>HarvestV</span></a>
-          <button className="farm-location" onClick={() => openPanel("farm")} aria-label={t.farm}><Icon name="pin" /><span>{confirmedFarm?.name||(language==='en'?'No farm selected':'খামার বাছাই করা হয়নি')}</span></button>
-        </div>
-        <nav className="desktop-nav nav-pill" aria-label={language === "en" ? "Main navigation" : "মূল মেনু"}>
-          <a href="/dashboard" className="nav-item">{language === "en" ? "Dashboard" : "ড্যাশবোর্ড"}</a>
-          <a href="/information-check" className="nav-item">{language === "en" ? "Information Check" : "তথ্য যাচাই"}</a>
-          {navItems.map(([key, label]) => key === "home" ? <a href="#" className="nav-item active" key={key} aria-current="page">{label}</a> : <button className="nav-item" key={key} onClick={() => openPanel(key)}>{label}</button>)}
-        </nav>
-        <div className="header-actions">
-          <div className="language-switch" role="group" aria-label="Language / ভাষা">
-            <button onClick={() => switchLanguage("en")} aria-pressed={language === "en"} lang="en">EN</button>
-            <button onClick={() => switchLanguage("bn")} aria-pressed={language === "bn"} lang="bn">বাংলা</button>
-          </div>
-          <button className="profile-button" onClick={() => openPanel("profile")} aria-label={t.profile}>
-            <span className="profile-info"><strong>{profile?.name||(language==='bn'?'আপনার প্রোফাইল':'Your profile')}</strong><span>{profile?.phone||(language==='bn'?'প্রোফাইল সম্পাদনা':'Edit profile')}</span></span><span className="avatar"><Icon name="user" /></span>
-          </button>
-          <button className="mobile-menu-button" aria-label={t.menu} aria-expanded={mobileMenu} aria-controls="mobile-nav" onClick={() => setMobileMenu(!mobileMenu)}><span /><span /><span /></button>
-        </div>
-      </div>
-      {mobileMenu && <nav id="mobile-nav" className="mobile-nav" aria-label={t.menu}>{navItems.map(([key, label]) => key === "home" ? <a key={key} href="#" onClick={() => setMobileMenu(false)} aria-current="page">{label}</a> : <button key={key} onClick={() => openPanel(key)}>{label}</button>)}<button onClick={()=>openPanel('profile')}>{language==='bn'?'প্রোফাইল সম্পাদনা':'Edit profile'}</button></nav>}
-    </header>
+    <AppNavbar active="home" />
 
     <main id="main">
       <section className="hero section" data-node-id="40:29991" aria-labelledby="hero-heading">
         <div className="container">
           <div className="hero-copy">
-            <Tag dot>{t.eyebrow}</Tag>
             <h1 id="hero-heading">{t.headline}<br className="headline-break" />{" "}{t.headlineEnd}</h1>
             <p className="hero-description">{t.introduction}</p>
             <div className="hero-actions"><button className="button primary" onClick={() => openPanel("rotation")}>{t.plan}<Icon name="arrow" /></button><a href="#how-it-works" className="button text-button">{t.how}<Icon name="down" /></a></div>

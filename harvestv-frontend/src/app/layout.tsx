@@ -22,6 +22,9 @@ import "./figma-responsive.css";
 import "./typography.css";
 import "./live.css";
 import "./profile/profile.css";
+import "./compact-dashboard.css";
+import "./my-farm-modern.css";
+import "./frontend-consistency.css";
 
 export const metadata: Metadata = {
   title: "HarvestV — Plan your next crop with confidence",

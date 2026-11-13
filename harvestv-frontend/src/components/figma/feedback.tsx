@@ -25,24 +25,6 @@ export default function Feedback() {
     return (<div className="figma-189" data-node-id="115:719" style={{ backgroundImage: "linear-gradient(90deg, rgb(250, 248, 242) 0%, rgb(250, 248, 242) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feedback">
       <div className="figma-258" data-node-id="115:720" data-name="MainContent">
         <div className="figma-259" data-node-id="115:721" data-name="Section - Title & Breadcrumb Block">
-          <div className="figma-209" data-node-id="115:722" data-name="Container">
-            <div className="figma-260" data-node-id="115:723" data-name="Background"/>
-            <div className="figma-211" data-node-id="115:724" data-name="Margin">
-              <div className="figma-261" data-node-id="115:725">
-                <p className="figma-59"><T text="COMMUNITY & AGRONOMY DESK"/></p>
-              </div>
-            </div>
-            <div className="figma-211" data-node-id="115:726" data-name="Margin">
-              <div className="figma-262" data-node-id="115:727">
-                <p className="figma-59"><T text="/"/></p>
-              </div>
-            </div>
-            <div className="figma-211" data-node-id="115:728" data-name="Margin">
-              <div className="figma-263" data-node-id="115:729">
-                <p className="figma-59"><T text="LOCAL FARM FEEDBACK"/></p>
-              </div>
-            </div>
-          </div>
           <div className="figma-264" data-node-id="115:730" data-name="Heading 1">
             <div className="figma-265" data-node-id="115:731">
               <p className="figma-266"><T text="Farm Feedback & Advisory Desk"/></p>

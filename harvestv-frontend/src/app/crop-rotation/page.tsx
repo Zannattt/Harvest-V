@@ -1,3 +1,4 @@
-import Design from '@/components/figma/crop-rotation';
+import RotationPlanner from '@/components/rotation-planner';
 import PageInteractions from '@/components/page-interactions';
-export default function Page(){return <PageInteractions page="crop-rotation"><Design /></PageInteractions>;}
+import './rotation.css';
+export default function Page(){return <PageInteractions page="crop-rotation"><RotationPlanner /></PageInteractions>;}

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type ReactNode, type MouseEvent } from 're
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/lib/language';
 import {useFarm} from '@/lib/farm-context';
+import AppNavbar from '@/components/app-navbar';
 
 export default function PageInteractions({page,children}:{page:string;children:ReactNode}) {
  const {language,setLanguage,t}=useLanguage();
@@ -35,7 +36,7 @@ export default function PageInteractions({page,children}:{page:string;children:R
   setMessage('This feature is a frontend preview. No request has been sent.');
  }
  return <div ref={root} className={`figma-page page-${page}`} onClick={click}>
-  <div className="mobile-page-nav"><a href="/">HarvestV</a><select aria-label={t('Go to page')} value={'/'+page} onChange={e=>router.push(e.target.value)}>{[['/','Home'],['/dashboard','Dashboard'],['/my-farm','My Farm'],['/crop-rotation','Crop Rotation'],['/information-check','Information Check'],['/feedback','Feedback'],['/profile','Edit profile']].map(([url,label])=><option key={url} value={url}>{t(label)}</option>)}</select><div className="page-language-switch" role="group" aria-label="Language / ভাষা"><button data-action="EN" aria-pressed={language==='en'} lang="en">EN</button><button data-action="বাংলা" aria-pressed={language==='bn'} lang="bn">বাংলা</button></div></div>
+  <AppNavbar active={page} />
   {children}
   {page==='feedback'&&reports.length>0&&<section className="local-reports"><h2>{t('Your saved feedback')}</h2>{reports.map((report,i)=><article key={i}><strong>{t('Saved · no expert review service connected')}</strong><p>{report}</p></article>)}</section>}
   <div className="prototype-label">{t('Farm, weather, feedback, saved rotation plans, and curated information checks use the connected backend. Expert review is not connected.')} · <a href="/policies">{t('Policies and farming guidance')}</a></div>

@@ -5,7 +5,7 @@
 .soil-tests > div {display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;padding-top:16px;}
 .photo-upload {display:flex;flex-wrap:wrap;gap:12px;align-items:center;border:1px solid #e6e1d5;border-radius:12px;padding:10px 16px;background:white;font-size:14px;line-height:22px;}
 .photo-upload input {max-width:200px;font-size:12px;}
-.figma-page label:has(input[type="radio"]:checked) {outline:2px solid #4b5320;border-radius:50%;}
+.figma-page label:has(input[type="radio"]:checked) {outline:2px solid #4b5320;outline-offset:2px;border-radius:8px;}
 .figma-page * {border-width:0;border-style:solid;}
 .figma-page button {text-align:inherit;font:inherit;}
 .figma-page input,.figma-page textarea {font-family:inherit;line-height:24px;resize:vertical;}
