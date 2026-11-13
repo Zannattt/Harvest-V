@@ -65,4 +65,6 @@ export const bangla: Record<string, string> = {
   "Map preview ready. Select the matching district, then confirm farm location.":"মানানসই জেলা বেছে নিয়ে খামারের অবস্থান নিশ্চিত করুন।",
   "Map preview ready. Select the matching division and district, then confirm farm location.":"মানানসই বিভাগ ও জেলা বেছে নিয়ে খামারের অবস্থান নিশ্চিত করুন।",
   "Map preview is not saved yet. Confirm farm location to save it.":"মানচিত্রের অবস্থান এখনো সংরক্ষিত নয়। সংরক্ষণ করতে খামারের অবস্থান নিশ্চিত করুন।",
+  "Profile storage is unavailable. Please try again later.":"প্রোফাইল সংরক্ষণের সেবা এখন পাওয়া যাচ্ছে না। পরে আবার চেষ্টা করুন।",
+  "The server rejected this save request. Please reload and try again.":"সার্ভার এই সংরক্ষণের অনুরোধ গ্রহণ করেনি। পাতা আবার খুলে চেষ্টা করুন।",
 };

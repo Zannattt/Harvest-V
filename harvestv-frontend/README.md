@@ -4,7 +4,7 @@ A responsive Next.js implementation of the **Home – HarvestV** Figma frame (`4
 
 ## Run locally
 
-Requires Node.js 24 or later. The local backend uses the built-in `node:sqlite` module.
+Requires Node.js 24 or later. The local backend uses the built-in `node:sqlite` module. Vercel requires a managed PostgreSQL database.
 
 ```sh
 npm install
@@ -75,7 +75,9 @@ Weather uses Open-Meteo model estimates, includes source/model timestamps, and i
 | `GET /api/farms`, `PUT /api/farms` | Current anonymous session's confirmed farm and details |
 | `GET /api/feedback`, `POST /api/feedback` | Current anonymous session's saved observations |
 
-SQLite lives in `../.harvestv-data/harvestv.sqlite`, outside the watched frontend folder to avoid development reload loops. It is excluded from the root Git repository. Set `HARVESTV_DATA_DIR` to an absolute writable directory if needed. Preserve this directory for backups. A production deployment needs durable storage and a proper account/access model; ephemeral serverless filesystems are unsuitable for this local setup.
+SQLite lives in `../.harvestv-data/harvestv.sqlite`, outside the watched frontend folder to avoid development reload loops. It is excluded from the root Git repository. Set `HARVESTV_DATA_DIR` to an absolute writable directory if needed. Preserve this directory for backups.
+
+For Vercel, connect a managed PostgreSQL database through Vercel Storage and set its pooled connection string as `DATABASE_URL` in the frontend project's environment variables. Redeploy after setting the variable. The app creates its tables on first access. If `DATABASE_URL` is absent on Vercel, storage endpoints return `STORAGE_UNAVAILABLE`; a local SQLite file cannot persist there. Local development continues using SQLite when `DATABASE_URL` is unset. Existing local SQLite data is not automatically moved to the production database. The anonymous cookie is still the record identifier; account authentication and cross-device access are separate future work.
 
 No API key is needed for the currently used public endpoints. Check provider usage terms before commercial deployment: [Open-Meteo](https://open-meteo.com/en/terms), [NASA POWER](https://power.larc.nasa.gov/docs/).
 
