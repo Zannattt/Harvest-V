@@ -7,7 +7,7 @@ import AppNavbar from '@/components/app-navbar';
 
 export default function PageInteractions({page,children}:{page:string;children:ReactNode}) {
  const {language,setLanguage,t}=useLanguage();
- const {farm,startTracking,startNewFarm,saveDetails,setDetails}=useFarm();
+ const {farm,startTracking,startNewFarm,saveDetails,setDetails,storageError}=useFarm();
  const root=useRef<HTMLDivElement>(null);const router=useRouter();const [message,setMessage]=useState('');const [reports,setReports]=useState<string[]>([]);
  useEffect(()=>{if(page!=='feedback')return;const controller=new AbortController();fetch('/api/feedback',{signal:controller.signal,cache:'no-store'}).then(async response=>{if(!response.ok)throw new Error();const data=await response.json();setReports(data.reports.map((report:{message:string})=>report.message));}).catch(error=>{if(error.name!=='AbortError')setMessage('Feedback storage is unavailable. Please retry.');});return()=>controller.abort();},[page]);
  function save(key:string,value:unknown){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{setMessage('Could not save. Allow browser storage and try again.');return false;}}
@@ -40,6 +40,6 @@ export default function PageInteractions({page,children}:{page:string;children:R
   {children}
   {page==='feedback'&&reports.length>0&&<section className="local-reports"><h2>{t('Your saved feedback')}</h2>{reports.map((report,i)=><article key={i}><strong>{t('Saved · no expert review service connected')}</strong><p>{report}</p></article>)}</section>}
   <div className="prototype-label">{t('Farm, weather, feedback, saved rotation plans, and curated information checks use the connected backend. Expert review is not connected.')} · <a href="/policies">{t('Policies and farming guidance')}</a></div>
-  {message&&<div className="page-status" role="status"><p>{t(message)}</p><button aria-label={t('Dismiss message')} onClick={event=>{event.stopPropagation();setMessage('');}}>×</button></div>}
+  {message&&<div className="page-status" role="status"><p>{t(message==='Please check the My Farm fields marked above and try again.'&&storageError?storageError:message)}</p><button aria-label={t('Dismiss message')} onClick={event=>{event.stopPropagation();setMessage('');}}>×</button></div>}
  </div>;
 }
